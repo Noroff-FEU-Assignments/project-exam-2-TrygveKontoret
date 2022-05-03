@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0px;
         box-sizing: border-box;
         text-decoration: none;
+        list-style: none;
     }
 
     body {
