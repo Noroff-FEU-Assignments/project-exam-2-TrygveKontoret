@@ -122,4 +122,7 @@ export const StyledBurgerNav = styled.nav`
       }
     }
   }
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
