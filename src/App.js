@@ -6,10 +6,12 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navigation from "./components/nav/Navigation";
+import GlobalStyles from "./GlobalStyles";
 
 function App() {
   return (
     <>
+      <GlobalStyles />
       <Router>
         <Navigation />
         <Routes>
