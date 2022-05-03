@@ -52,7 +52,7 @@ const Navigation = () => {
               <li>Home</li>
             </Link>
             <Link to="/allhotels">
-              <li>All Hotels</li>
+              <li>Hotels</li>
             </Link>
             <Link to="/contact">
               <li>Contact</li>
@@ -81,7 +81,7 @@ const Navigation = () => {
               <li>Home</li>
             </Link>
             <Link to="/allhotels">
-              <li>All Hotels</li>
+              <li>Hotels</li>
             </Link>
             <Link to="/contact">
               <li>Contact</li>
