@@ -6,6 +6,7 @@ import {
   StyledBurgerNav,
 } from "./NavigationStyles";
 import { useState, useRef } from "react";
+import { AnimatePresence } from "framer-motion";
 
 const Navigation = () => {
   const bar1Ref = useRef();
@@ -68,30 +69,38 @@ const Navigation = () => {
           <div className="bar3" ref={bar3Ref}></div>
         </StyledHamburger>
       </StyledHeader>
-      {open && (
-        <StyledBurgerNav>
-          <div className="searchbar">
-            <input type="text" placeholder="Search" />
-            <div className="searchbtnBurger">
-              <p>Go</p>
+      <AnimatePresence>
+        {open && (
+          <StyledBurgerNav
+            initial={{
+              y: "120%",
+            }}
+            animate={{ y: "0" }}
+            exit={{ y: "-150%" }}
+          >
+            <div className="searchbar">
+              <input type="text" placeholder="Search" />
+              <div className="searchbtnBurger">
+                <p>Go</p>
+              </div>
             </div>
-          </div>
-          <ul>
-            <Link to="/">
-              <li>Home</li>
-            </Link>
-            <Link to="/allhotels">
-              <li>Hotels</li>
-            </Link>
-            <Link to="/contact">
-              <li>Contact</li>
-            </Link>
-            <Link to="/login">
-              <li>Login</li>
-            </Link>
-          </ul>
-        </StyledBurgerNav>
-      )}
+            <ul>
+              <Link to="/">
+                <li>Home</li>
+              </Link>
+              <Link to="/allhotels">
+                <li>Hotels</li>
+              </Link>
+              <Link to="/contact">
+                <li>Contact</li>
+              </Link>
+              <Link to="/login">
+                <li>Login</li>
+              </Link>
+            </ul>
+          </StyledBurgerNav>
+        )}
+      </AnimatePresence>
     </>
   );
 };

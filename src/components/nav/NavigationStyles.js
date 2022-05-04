@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const motiondiv = motion.div;
+const motionNav = motion.nav;
 
 export const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid black;
 
   .logo {
     width: 25%;
@@ -78,7 +79,7 @@ export const StyledHamburger = styled.div`
   }
 `;
 
-export const StyledBurgerNav = styled.nav`
+export const StyledBurgerNav = styled(motionNav)`
   position: absolute;
   width: 100%;
   display: flex;
