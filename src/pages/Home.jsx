@@ -7,6 +7,7 @@ const Home = () => {
     <>
       {/* <Carousel /> */}
       <CarouselTest />
+      <h1>heihei</h1>
     </>
   );
 };

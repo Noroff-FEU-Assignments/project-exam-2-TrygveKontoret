@@ -85,6 +85,7 @@ export const StyledBurgerNav = styled(motionNav)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 9999;
 
   .searchbar {
     display: flex;

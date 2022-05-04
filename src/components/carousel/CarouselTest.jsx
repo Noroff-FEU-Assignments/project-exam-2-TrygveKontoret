@@ -8,7 +8,14 @@ import { StyledCarousel } from "./CarouselStyles";
 
 const CarouselTest = () => {
   return (
-    <StyledCarousel infiniteLoop autoPlay showStatus={false} showThumbs={false}>
+    <StyledCarousel
+      infiniteLoop
+      autoPlay
+      showStatus={false}
+      showThumbs={false}
+      showArrows={false}
+      stopOnHover={false}
+    >
       <div>
         <img src={bergen1} alt="" />
       </div>
