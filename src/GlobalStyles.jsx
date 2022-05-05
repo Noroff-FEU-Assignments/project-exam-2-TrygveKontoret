@@ -14,6 +14,8 @@ const GlobalStyles = createGlobalStyle`
             color: black;
         }
     }
+
+    
 `;
 
 export default GlobalStyles;

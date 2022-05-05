@@ -29,10 +29,6 @@ export const StyledWrapper = styled.div`
         transition: 0.5s;
       }
 
-      p {
-        padding-top: 10px;
-      }
-
       h3 {
         /* text-align: center; */
         padding-bottom: 10px;
@@ -45,18 +41,6 @@ export const StyledWrapper = styled.div`
           width: 100%;
           height: 100%;
           object-fit: cover;
-        }
-      }
-
-      .stars {
-        margin-top: 10px;
-      }
-
-      .rating {
-        display: flex;
-        margin-top: 10px;
-        p {
-          margin-right: 5px;
         }
       }
     }
