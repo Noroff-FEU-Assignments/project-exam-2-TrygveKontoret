@@ -16,13 +16,13 @@ const Carousel = () => {
       stopOnHover={false}
     >
       <div>
-        <img src={bergen1} alt="" />
+        <img src={bergen1} alt="Bryggen in Bergen" />
       </div>
       <div>
-        <img src={bergen2} alt="" />
+        <img src={bergen2} alt="Overlook of Bergen city" />
       </div>
       <div>
-        <img src={bergen3} alt="" />
+        <img src={bergen3} alt="Bryggen in Bergen" />
       </div>
     </StyledCarousel>
   );
