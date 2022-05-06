@@ -1,22 +1,9 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import { useFetch } from "../../hooks/useFetch";
 import { ACTIVITIES } from "../../utils/api";
-// import { StyledWrapper } from "./ActivitiesStyled";
 import { StyledWrapper } from "../featured/FeaturedStyling";
 
 const Activities = () => {
-  const [data, setData] = useState([]);
-
-  const fetchActivities = async () => {
-    const { data } = await axios.get(ACTIVITIES);
-    setData(data.data);
-  };
-
-  console.log(data);
-
-  useEffect(() => {
-    fetchActivities();
-  }, []);
+  const { data, loading, hasError } = useFetch(ACTIVITIES);
 
   return (
     <>

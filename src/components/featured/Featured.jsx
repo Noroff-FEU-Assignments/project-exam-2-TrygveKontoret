@@ -1,22 +1,10 @@
-import axios from "axios";
 import { StyledWrapper } from "./FeaturedStyling";
 import { HOTELS } from "../../utils/api";
-import { useState, useEffect } from "react";
 import { starRating } from "../../utils/starsSVG";
+import { useFetch } from "../../hooks/useFetch";
 
 const Featured = () => {
-  const [data, setData] = useState([]);
-
-  const fetchData = async () => {
-    const { data } = await axios.get(HOTELS);
-    setData(data.data);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  console.log(data);
+  const { data, loading, hasError } = useFetch(HOTELS);
 
   return (
     <>
