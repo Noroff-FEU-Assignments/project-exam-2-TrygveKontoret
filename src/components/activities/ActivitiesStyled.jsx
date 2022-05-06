@@ -12,7 +12,11 @@ export const StyledWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
-    /* margin-top: 30px; */
+    margin-top: 30px;
+    /* padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; */
 
     .card {
       padding: 10px;
@@ -23,6 +27,8 @@ export const StyledWrapper = styled.div`
         rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
       border-radius: 5px;
       margin: 25px;
+      /* width: 24%;
+      margin-bottom: 1rem; */
 
       &:hover {
         transform: scale(1.1);

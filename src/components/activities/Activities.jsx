@@ -1,6 +1,7 @@
 import { useFetch } from "../../hooks/useFetch";
 import { ACTIVITIES } from "../../utils/api";
-import { StyledWrapper } from "../featured/FeaturedStyling";
+// import { StyledWrapper } from "../featured/FeaturedStyling";
+import { StyledWrapper } from "./ActivitiesStyled";
 
 const Activities = () => {
   const { data, loading, hasError } = useFetch(ACTIVITIES);
