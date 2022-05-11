@@ -31,6 +31,10 @@ export const StyledWrapper = styled.div`
       /* width: 24%;
       margin-bottom: 1rem; */
 
+      p {
+        padding-top: 10px;
+      }
+
       &:hover {
         transform: scale(1.1);
         transition: 0.5s;
