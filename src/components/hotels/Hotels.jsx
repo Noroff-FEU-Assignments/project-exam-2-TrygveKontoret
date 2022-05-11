@@ -18,13 +18,18 @@ const Hotels = () => {
                     <div className="imgCont">
                       <img src={hotel.attributes.img_url} alt="" />
                     </div>
-                    <h3>{hotel.attributes.name}</h3>
-                    <div className="stars">
-                      {starRating(hotel.attributes.star)}
-                    </div>
-                    <div className="rating">
-                      <p>User rating: {hotel.attributes.rating} </p>
-                      <p>({hotel.attributes.rating_users} users)</p>
+                    <div className="textCont">
+                      <h3>{hotel.attributes.name}</h3>
+                      <div className="stars">
+                        {starRating(hotel.attributes.star)}
+                      </div>
+                      <div className="desc">
+                        <p>{hotel.attributes.description}</p>
+                      </div>
+                      <div className="rating">
+                        <p>User rating: {hotel.attributes.rating} </p>
+                        <p>({hotel.attributes.rating_users} users)</p>
+                      </div>
                     </div>
                   </div>
                 );

@@ -17,6 +17,7 @@ export const StyledWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; */
+    width: 100%;
 
     .card {
       padding: 10px;

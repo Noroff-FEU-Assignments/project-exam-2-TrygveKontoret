@@ -85,16 +85,16 @@ const Navigation = () => {
               </div>
             </div>
             <ul>
-              <Link to="/">
+              <Link to="/" onClick={toggleOpen}>
                 <li>Home</li>
               </Link>
-              <Link to="/allhotels">
+              <Link to="/allhotels" onClick={toggleOpen}>
                 <li>Hotels</li>
               </Link>
-              <Link to="/contact">
+              <Link to="/contact" onClick={toggleOpen}>
                 <li>Contact</li>
               </Link>
-              <Link to="/login">
+              <Link to="/login" onClick={toggleOpen}>
                 <li>Login</li>
               </Link>
             </ul>
