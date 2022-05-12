@@ -19,7 +19,7 @@ export const StyledContact = styled.form`
   }
 
   input,
-  select {
+  textarea {
     width: 250px;
     padding: 5px 0;
   }
@@ -46,3 +46,5 @@ export const StyledContact = styled.form`
     }
   }
 `;
+
+export const StyledLogin = styled.form``;

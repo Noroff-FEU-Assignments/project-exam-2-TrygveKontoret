@@ -7,18 +7,28 @@ import {
 } from "./NavigationStyles";
 import { useState, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
+import { useContext } from "react";
+import AuthContext from "../../context/AuthContext";
 
 const Navigation = () => {
   const bar1Ref = useRef();
   const bar2Ref = useRef();
   const bar3Ref = useRef();
   const [open, setOpen] = useState(false);
+
+  const [auth, setAuth] = useContext(AuthContext);
   const toggleOpen = () => {
     setOpen(!open);
     bar1Ref.current.classList.toggle("change1");
     bar2Ref.current.classList.toggle("change2");
     bar3Ref.current.classList.toggle("change3");
   };
+
+  // const loggedIn = () => {
+  //   setAuth(auth);
+  // };
+
+  // {!auth return}
 
   return (
     <>
@@ -58,9 +68,15 @@ const Navigation = () => {
             <Link to="/contact">
               <li>Contact</li>
             </Link>
-            <Link to="/login">
-              <li>Login</li>
-            </Link>
+            {!auth ? (
+              <Link to="/login">
+                <li>Login</li>
+              </Link>
+            ) : (
+              <Link to="/admin">
+                <li>Admin</li>
+              </Link>
+            )}
           </ul>
         </nav>
         <StyledHamburger onClick={toggleOpen}>
@@ -94,9 +110,15 @@ const Navigation = () => {
               <Link to="/contact" onClick={toggleOpen}>
                 <li>Contact</li>
               </Link>
-              <Link to="/login" onClick={toggleOpen}>
-                <li>Login</li>
-              </Link>
+              {!auth ? (
+                <Link to="/login" onClick={toggleOpen}>
+                  <li>Log in</li>
+                </Link>
+              ) : (
+                <Link to="/admin" onClick={toggleOpen}>
+                  <li>Admin</li>
+                </Link>
+              )}
             </ul>
           </StyledBurgerNav>
         )}
