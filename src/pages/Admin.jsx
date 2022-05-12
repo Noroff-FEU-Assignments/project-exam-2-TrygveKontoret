@@ -7,11 +7,7 @@ const Admin = () => {
 
   return (
     <>
-      {!auth ? (
-        <p>BITCH DU ER IKKE LOGGET INN</p>
-      ) : (
-        <p>YEYE du er logget inn</p>
-      )}
+      {!auth ? <p>BITCH DU ER IKKE LOGGET INN</p> : <p>Bada bing bada bom</p>}
     </>
   );
 };

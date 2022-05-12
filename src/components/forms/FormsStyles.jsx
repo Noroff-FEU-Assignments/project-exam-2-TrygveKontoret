@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledContact = styled.form`
+export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,4 +47,4 @@ export const StyledContact = styled.form`
   }
 `;
 
-export const StyledLogin = styled.form``;
+// export const StyledLogin = styled.form``;

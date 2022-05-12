@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { contactSchema } from "../../utils/schemas";
 import { useState } from "react";
-import { StyledContact, StyledLogin } from "./FormsStyles";
+import { StyledForm } from "./FormsStyles";
 import { useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -27,7 +27,7 @@ export const ContactForm = () => {
 
   return (
     <>
-      <StyledContact onSubmit={handleSubmit(checkSuccess)}>
+      <StyledForm onSubmit={handleSubmit(checkSuccess)}>
         <label>First name:</label>
         <input
           {...register("firstName")}
@@ -64,7 +64,7 @@ export const ContactForm = () => {
 
         <button>Send</button>
         {success && <span className="success">Message successfully sent</span>}
-      </StyledContact>
+      </StyledForm>
     </>
   );
 };
@@ -99,7 +99,7 @@ export const LoginForm = () => {
 
   return (
     <>
-      <StyledLogin onSubmit={handleSubmit(onSubmit)}>
+      <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <label>Username</label>
         <input {...register("username")} placeholder="Your username" />
         {errors.username && <span>{errors.username.message}</span>}
@@ -113,7 +113,7 @@ export const LoginForm = () => {
         {errors.password && <span>{errors.password.message}</span>}
 
         <button>Login</button>
-      </StyledLogin>
+      </StyledForm>
     </>
   );
 };
