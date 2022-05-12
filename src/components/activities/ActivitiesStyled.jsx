@@ -56,4 +56,26 @@ export const StyledWrapper = styled.div`
       }
     }
   }
+
+  @media (min-width: 1580px) {
+    /* .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      .card {
+        width: 21%;
+        margin-bottom: 1rem;
+      }
+    } */
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(300px, 1fr));
+      grid-gap: 1rem;
+
+      /* .card {
+        width: 25%;
+      } */
+    }
+  }
 `;
