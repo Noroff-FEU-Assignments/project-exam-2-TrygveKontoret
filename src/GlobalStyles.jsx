@@ -15,6 +15,10 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
+    a {
+        color: black;
+    }
+
     
 `;
 

@@ -2,6 +2,7 @@ import { StyledWrapper } from "./FeaturedStyling";
 import { HOTELS } from "../../utils/api";
 import { starRating } from "../../utils/starsSVG";
 import { useFetch } from "../../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 const Featured = () => {
   const { data, loading, hasError } = useFetch(HOTELS);
@@ -15,19 +16,21 @@ const Featured = () => {
             ? data.map((featured, idx) => {
                 if (featured.attributes.featured) {
                   return (
-                    <div key={idx} className="card">
-                      <h3>{featured.attributes.name}</h3>
-                      <div className="imgCont">
-                        <img src={featured.attributes.img_url} alt="" />
+                    <Link to={`/hotels/${featured.id}`} key={featured.id}>
+                      <div key={idx} className="card">
+                        <h3>{featured.attributes.name}</h3>
+                        <div className="imgCont">
+                          <img src={featured.attributes.img_url} alt="" />
+                        </div>
+                        <div className="stars">
+                          {starRating(featured.attributes.star)}
+                        </div>
+                        <div className="rating">
+                          <p>User rating: {featured.attributes.rating} </p>
+                          <p>({featured.attributes.rating_users} users)</p>
+                        </div>
                       </div>
-                      <div className="stars">
-                        {starRating(featured.attributes.star)}
-                      </div>
-                      <div className="rating">
-                        <p>User rating: {featured.attributes.rating} </p>
-                        <p>({featured.attributes.rating_users} users)</p>
-                      </div>
-                    </div>
+                    </Link>
                   );
                 }
               })
