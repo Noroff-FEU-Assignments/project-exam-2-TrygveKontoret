@@ -129,7 +129,7 @@ export const LoginForm = () => {
       password: FormData.password,
     });
 
-    setAuth(responseData.data);
+    setAuth(responseData.data.jwt);
     console.log(auth);
     navigate("/admin");
   };
