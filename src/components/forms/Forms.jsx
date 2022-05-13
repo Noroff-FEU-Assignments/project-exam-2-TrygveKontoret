@@ -34,8 +34,17 @@ export const ContactForm = () => {
   const checkSuccess = (FormData) => {
     setSuccess(true);
     reset();
-    const axios = require("axios");
-    let data = JSON.stringify({
+    // const axios = require("axios");
+    // let data = JSON.stringify({
+    //   data: {
+    //     name: FormData.name,
+    //     email: FormData.email,
+    //     subject: FormData.subject,
+    //     message: FormData.message,
+    //   },
+    // });
+
+    let data = axios.post(MSG_URL, {
       data: {
         name: FormData.name,
         email: FormData.email,
@@ -44,22 +53,22 @@ export const ContactForm = () => {
       },
     });
 
-    let config = {
-      method: "post",
-      url: MSG_URL,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: data,
-    };
+    // let config = {
+    //   method: "post",
+    //   url: MSG_URL,
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   data: data,
+    // };
 
-    axios(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // axios(config)
+    //   .then((response) => {
+    //     console.log(JSON.stringify(response.data));
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
 
     // responseData(FormData);
     setTimeout(() => {
@@ -120,13 +129,13 @@ export const LoginForm = () => {
       password: FormData.password,
     });
 
-    setAuth(responseData);
+    setAuth(responseData.data);
     console.log(auth);
     navigate("/admin");
   };
 
-  const onSubmit = (formData) => {
-    userLogin(formData);
+  const onSubmit = (FormData) => {
+    userLogin(FormData);
   };
 
   return (
