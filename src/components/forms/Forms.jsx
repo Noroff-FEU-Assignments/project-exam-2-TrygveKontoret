@@ -8,39 +8,71 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import { loginSchema } from "../../utils/schemas";
-import { AUTH_URL } from "../../utils/api";
+import { AUTH_URL, MSG_URL } from "../../utils/api";
 
 export const ContactForm = () => {
-  const [success, setSucces] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(contactSchema),
   });
 
-  const checkSuccess = () => {
-    setSucces(true);
+  // console.log(MSG_URL);
+
+  // const responseData = axios.post(MSG_URL, {
+  //   name: FormData.name,
+  //   email: FormData.email,
+  //   subject: FormData.subject,
+  //   message: FormData.message,
+  // });
+
+  const checkSuccess = (FormData) => {
+    setSuccess(true);
+    reset();
+    const axios = require("axios");
+    let data = JSON.stringify({
+      data: {
+        name: FormData.name,
+        email: FormData.email,
+        subject: FormData.subject,
+        message: FormData.message,
+      },
+    });
+
+    let config = {
+      method: "post",
+      url: MSG_URL,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then((response) => {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    // responseData(FormData);
+    setTimeout(() => {
+      setSuccess(false);
+    }, 5000);
   };
 
   return (
     <>
       <StyledForm onSubmit={handleSubmit(checkSuccess)}>
-        <label>First name:</label>
-        <input
-          {...register("firstName")}
-          placeholder="Please enter your first name"
-        />
-        {errors.firstName && <span>{errors.firstName.message}</span>}
-
-        <label>Last name:</label>
-        <input
-          {...register("lastName")}
-          placeholder="Please enter your last name"
-        />
-        {errors.lastName && <span>{errors.lastName.message}</span>}
+        <label>Name:</label>
+        <input {...register("name")} placeholder="Please enter your name" />
+        {errors.name && <span>{errors.name.message}</span>}
 
         <label>Email:</label>
         <input {...register("email")} placeholder="Please enter your email" />

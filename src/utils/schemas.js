@@ -1,14 +1,10 @@
 import * as yup from "yup";
 
 export const contactSchema = yup.object().shape({
-  firstName: yup
+  name: yup
     .string()
     .min(3, "Must be at least 3 characters")
-    .required("Please fill in your first name"),
-  lastName: yup
-    .string()
-    .min(4, "Must be at least 4 characters")
-    .required("Please fill in your last name"),
+    .required("Please fill in your name"),
   email: yup
     .string()
     .email("Invalid email format")

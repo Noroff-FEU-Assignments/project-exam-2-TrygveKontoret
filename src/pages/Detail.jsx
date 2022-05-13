@@ -3,9 +3,11 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL, HOTELS } from "../utils/api";
+import { useFetch } from "../hooks/useFetch";
 
 const Detail = () => {
   const { id } = useParams();
+  // const { data, loading, hasError } = useFetch(HOTELS + "/" + id);
 
   const [data, setData] = useState([]);
   const fetchData = async () => {
@@ -13,11 +15,13 @@ const Detail = () => {
     setData(data);
   };
 
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     fetchData();
   }, []);
+
+  console.log(data);
 
   return (
     <>
