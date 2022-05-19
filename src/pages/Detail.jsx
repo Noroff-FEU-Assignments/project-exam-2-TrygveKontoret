@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL, HOTELS } from "../utils/api";
 import { useFetch } from "../hooks/useFetch";
+import { DetailCarousel } from "../components/carousel/Carousel";
 
 const Detail = () => {
   const { id } = useParams();
@@ -27,10 +28,12 @@ const Detail = () => {
     <>
       {data.data ? (
         <>
-          <h2>{data.data.attributes.name}</h2>
+          <DetailCarousel data={data.data} />
+          <h1>{data.data.attributes.name}</h1>
+          <p>{data.data.attributes.description}</p>
         </>
       ) : (
-        "LOASING"
+        "LOADING"
       )}
     </>
   );

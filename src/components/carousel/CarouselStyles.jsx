@@ -95,3 +95,10 @@ export const StyledCarousel = styled(Carousel)`
     }
   }
 `;
+
+export const StyledDetailCarousel = styled(Carousel)`
+  width: 80vw;
+  margin: auto;
+  margin-top: 30px;
+  border: 2px solid pink;
+`;
