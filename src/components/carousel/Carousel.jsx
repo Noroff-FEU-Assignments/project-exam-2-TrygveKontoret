@@ -39,20 +39,20 @@ export const DetailCarousel = (data) => {
       showArrows={true}
       stopOnHover={false}
     >
-      <div>
+      <div className="imgCont">
         {/* <p>{data.name}</p> */}
         <img src={data.data.attributes.img_url} alt="Bryggen in Bergen" />
       </div>
-      <div>
+      <div className="imgCont">
         <img
           src={data.data.attributes.img_url2}
           alt={data.data.attributes.name}
         />
       </div>
-      <div>
+      <div className="imgCont">
         <img src={data.data.attributes.img_url3} alt="Bryggen in Bergen" />
       </div>
-      <div>
+      <div className="imgCont">
         <img src={data.data.attributes.img_url4} alt="Bryggen in Bergen" />
       </div>
     </StyledDetailCarousel>

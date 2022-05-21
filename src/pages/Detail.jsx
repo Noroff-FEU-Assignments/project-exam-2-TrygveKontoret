@@ -5,6 +5,7 @@ import axios from "axios";
 import { BASE_URL, HOTELS } from "../utils/api";
 import { useFetch } from "../hooks/useFetch";
 import { DetailCarousel } from "../components/carousel/Carousel";
+import { BookingForm } from "../components/forms/Forms";
 
 const Detail = () => {
   const { id } = useParams();
@@ -26,6 +27,7 @@ const Detail = () => {
 
   return (
     <>
+      <BookingForm data={data.data} />
       {data.data ? (
         <>
           <DetailCarousel data={data.data} />

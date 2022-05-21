@@ -3,3 +3,4 @@ export const HOTELS = `${BASE_URL}hotels`;
 export const ACTIVITIES = `${BASE_URL}activities`;
 export const AUTH_URL = `${BASE_URL}auth/local`;
 export const MSG_URL = `${BASE_URL}messages`;
+export const BOOKING_URL = `${BASE_URL}bookings`;

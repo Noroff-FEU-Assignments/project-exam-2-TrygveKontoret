@@ -1,14 +1,14 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { contactSchema } from "../../utils/schemas";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { StyledForm } from "./FormsStyles";
 import { useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
-import { loginSchema } from "../../utils/schemas";
-import { AUTH_URL, MSG_URL } from "../../utils/api";
+import { loginSchema, bookingSchema } from "../../utils/schemas";
+import { AUTH_URL, BOOKING_URL, MSG_URL } from "../../utils/api";
 
 export const ContactForm = () => {
   const [success, setSuccess] = useState(false);
@@ -154,6 +154,95 @@ export const LoginForm = () => {
         {errors.password && <span>{errors.password.message}</span>}
 
         <button>Login</button>
+      </StyledForm>
+    </>
+  );
+};
+
+export const BookingForm = (data) => {
+  const dataRef = useRef();
+  const [success, setSuccess] = useState(false);
+  const [checkoutDate, setCheckoutDate] = useState();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(bookingSchema),
+  });
+
+  const checkSuccess = (FormData) => {
+    setSuccess(true);
+    reset();
+
+    let bookingData = axios.post(BOOKING_URL, {
+      data: {
+        hotel_name: data.data.attributes.name,
+        name: FormData.name,
+        email: FormData.email,
+        room: FormData.room,
+        checkin: FormData.checkin,
+        checkout: FormData.checkout,
+      },
+    });
+    setTimeout(() => {
+      setSuccess(false);
+    }, 5000);
+  };
+  const formatYmd = (date) => date.toISOString().slice(0, 10);
+
+  return (
+    <>
+      <StyledForm onSubmit={handleSubmit(checkSuccess)}>
+        <label>Name:</label>
+        <input {...register("name")} placeholder="Please enter your name" />
+        {errors.name && <span>{errors.name.message}</span>}
+
+        <label>Email:</label>
+        <input {...register("email")} placeholder="Please enter your email" />
+        {errors.email && <span>{errors.email.message}</span>}
+
+        {/* <label>Room:</label>
+        <select {...register("room")}>
+          <option>Please select room:</option>
+          <option value="Small room">Small room</option>
+          <option value="Medium room">Medium room</option>
+          <option value="Large room">Large room</option>
+        </select>
+        {errors.room && <span>{errors.room.message}</span>} */}
+
+        {/* <label>Checkin date:</label>
+        <input
+          {...register("checkin")}
+          type="date"
+          min={formatYmd(new Date())}
+          ref={dateRef}
+          onChange={() => {
+            setCheckoutDate(dateRef.current.value);
+          }}
+        />
+        {errors.checkin && <span>{errors.checkin.message}</span>} */}
+
+        <label>Checkin date:</label>
+        <input
+          {...register("checkin")}
+          type="date"
+          min={formatYmd(new Date())}
+          ref={dataRef}
+          onChange={() => {
+            setCheckoutDate(dataRef.current.value);
+          }}
+        />
+        {errors.checkin && <span>{errors.checkin.message}</span>}
+
+        <label>Checkout date:</label>
+        <input {...register("checkout")} type="date" min={checkoutDate} />
+        {errors.checkout && <span>{errors.checkout.message}</span>}
+
+        <button>Send</button>
+        {success && <span className="success">Message successfully sent</span>}
       </StyledForm>
     </>
   );

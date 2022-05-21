@@ -101,4 +101,13 @@ export const StyledDetailCarousel = styled(Carousel)`
   margin: auto;
   margin-top: 30px;
   border: 2px solid pink;
+  .imgCont {
+    width: 80vw;
+    height: 400px;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
 `;

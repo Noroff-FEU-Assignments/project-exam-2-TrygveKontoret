@@ -15,16 +15,17 @@ const Activities = () => {
             ? data.map((activity, idx) => {
                 return (
                   <div key={idx} className="card">
-                    {activity.attributes.name.length > 23 ? (
+                    <div className="imgCont">
+                      <img src={activity.attributes.img_url} alt="" />
+                    </div>
+                    {/* {activity.attributes.name.length > 23 ? (
                       <h3>
                         {activity.attributes.name.substring(0, 23) + "..."}
                       </h3>
                     ) : (
                       <h3>{activity.attributes.name}</h3>
-                    )}
-                    <div className="imgCont">
-                      <img src={activity.attributes.img_url} alt="" />
-                    </div>
+                    )} */}
+                    <h3>{activity.attributes.name}</h3>
                     <p>
                       {activity.attributes.description.substring(0, 200) +
                         "..."}
