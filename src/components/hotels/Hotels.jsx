@@ -26,7 +26,30 @@ const Hotels = () => {
                           {starRating(hotel.attributes.star)}
                         </div>
                         <div className="desc">
-                          <p>{hotel.attributes.description}</p>
+                          <p>
+                            {hotel.attributes.description.substring(0, 150) +
+                              "..."}
+                          </p>
+                          {/* {clientWidth === "400px" ? (
+                            <p>
+                              {hotel.attributes.description.substring(0, 100) +
+                                "..."}
+                            </p>
+                          ) : (
+                            <p>
+                              {hotel.attributes.description.substring(0, 150) +
+                                "..."}
+                            </p>
+                          )} */}
+                          {/* {!auth ? (
+                            <Link to="/login">
+                              <li>Login</li>
+                            </Link>
+                          ) : (
+                            <Link to="/admin">
+                              <li>Admin</li>
+                            </Link>
+                          )} */}
                         </div>
                         <div className="rating">
                           <p>User rating: {hotel.attributes.rating} </p>

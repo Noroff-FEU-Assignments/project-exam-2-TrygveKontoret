@@ -24,7 +24,7 @@ export const loginSchema = yup.object().shape({
   password: yup.string().required("Please enter your password"),
 });
 
-// const rooms = ["Small room", "Medium room", "Large room"];
+const rooms = ["Small room", "Medium room", "Large room"];
 
 export const bookingSchema = yup.object().shape({
   name: yup
@@ -35,6 +35,8 @@ export const bookingSchema = yup.object().shape({
     .string()
     .email("Invalid email format")
     .required("Please enter your email"),
+  room: yup.string().oneOf(rooms).required("Please select a room"),
+
   checkin: yup
     .date()
     .nullable()

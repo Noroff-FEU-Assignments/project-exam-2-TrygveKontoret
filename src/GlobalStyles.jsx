@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+
+
     * {
         margin: 0px;
         padding: 0px;
@@ -10,9 +12,13 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
+        font-family: 'Poppins', sans-serif;
         li {
             color: black;
         }
+    }
+    h1, h2, h3 {
+        font-family: 'Lato', sans-serif;
     }
 
     a {

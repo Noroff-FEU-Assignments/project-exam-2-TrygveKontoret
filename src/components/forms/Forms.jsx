@@ -204,14 +204,14 @@ export const BookingForm = (data) => {
         <input {...register("email")} placeholder="Please enter your email" />
         {errors.email && <span>{errors.email.message}</span>}
 
-        {/* <label>Room:</label>
+        <label>Room:</label>
         <select {...register("room")}>
           <option>Please select room:</option>
           <option value="Small room">Small room</option>
           <option value="Medium room">Medium room</option>
           <option value="Large room">Large room</option>
         </select>
-        {errors.room && <span>{errors.room.message}</span>} */}
+        {errors.room && <span>{errors.room.message}</span>}
 
         {/* <label>Checkin date:</label>
         <input
