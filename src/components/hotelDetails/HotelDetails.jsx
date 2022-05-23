@@ -40,13 +40,15 @@ const HotelDetails = () => {
             <h1>{data.data.attributes.name}</h1>
             <div className="stars">{starRating(data.data.attributes.star)}</div>
             <p>{data.data.attributes.description}</p>
-            <p>User rating: {data.data.attributes.rating}/10</p>
+            <div className="ratings">
+              <p>User rating: {data.data.attributes.rating}/10</p>
+              <p>by: {data.data.attributes.rating_users} users</p>
+            </div>
           </div>
         </StyledDetails>
       ) : (
         "LOADING"
       )}
-      <Rooms />
     </>
   );
 };

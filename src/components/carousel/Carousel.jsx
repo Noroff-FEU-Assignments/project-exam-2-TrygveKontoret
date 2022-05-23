@@ -3,7 +3,11 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import bergen1 from "../../media/bergen1.jpg";
 import bergen2 from "../../media/bergen2.jpg";
 import bergen3 from "../../media/bergen3.jpg";
-import { StyledCarousel, StyledDetailCarousel } from "./CarouselStyles";
+import {
+  StyledCarousel,
+  StyledDetailCarousel,
+  StyledRoomCarousel,
+} from "./CarouselStyles";
 
 const Carousel = () => {
   return (
@@ -56,5 +60,28 @@ export const DetailCarousel = (data) => {
         <img src={data.data.attributes.img_url4} alt="Bryggen in Bergen" />
       </div>
     </StyledDetailCarousel>
+  );
+};
+
+export const RoomCarousel = (room) => {
+  return (
+    <StyledRoomCarousel
+      infiniteLoop
+      showStatus={false}
+      showThumbs={false}
+      showArrows={true}
+      stopOnHover={false}
+    >
+      <div className="imgCont">
+        {/* <p>{data.name}</p> */}
+        <img src={room.data.attributes.img_url} alt="Bryggen in Bergen" />
+      </div>
+      <div className="imgCont">
+        <img src={room.data.attributes.img_url2} alt="" />
+      </div>
+      <div className="imgCont">
+        <img src={room.data.attributes.img_url3} alt="Bryggen in Bergen" />
+      </div>
+    </StyledRoomCarousel>
   );
 };

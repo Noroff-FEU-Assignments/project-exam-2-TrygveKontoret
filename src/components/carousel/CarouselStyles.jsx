@@ -98,16 +98,31 @@ export const StyledCarousel = styled(Carousel)`
 
 export const StyledDetailCarousel = styled(Carousel)`
   /* max-width: 40vw; */
-  margin: auto;
+  /* margin: auto; */
   margin: 30px;
-  border: 2px solid pink;
+  /* border: 2px solid pink; */
   .imgCont {
     max-width: 100%;
     height: 400px;
+
     img {
       object-fit: cover;
       height: 100%;
       width: 100%;
+      border-radius: 5px;
+    }
+  }
+`;
+
+export const StyledRoomCarousel = styled(Carousel)`
+  .imgCont {
+    max-width: 100%;
+    height: 300px;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      border-radius: 5px;
     }
   }
 `;
