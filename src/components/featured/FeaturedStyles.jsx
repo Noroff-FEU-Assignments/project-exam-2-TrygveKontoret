@@ -13,20 +13,22 @@ export const StyledWrapper = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
     /* margin-top: 30px; */
+    /* margin: 20px; */
 
     .card {
       padding: 10px;
       /* margin-bottom: 30px; */
       transition: 0.5s;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
       border-radius: 5px;
       margin: 25px;
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
         transition: 0.5s;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+          rgba(17, 17, 26, 0.05) 0px 8px 32px;
       }
 
       p {
@@ -36,6 +38,7 @@ export const StyledWrapper = styled.div`
       h3 {
         /* text-align: center; */
         padding-bottom: 10px;
+        padding-top: 10px;
       }
 
       .imgCont {

@@ -1,4 +1,4 @@
-import { StyledWrapper } from "./FeaturedStyling";
+import { StyledWrapper } from "./FeaturedStyles";
 import { HOTELS } from "../../utils/api";
 import { starRating } from "../../utils/starsSVG";
 import { useFetch } from "../../hooks/useFetch";

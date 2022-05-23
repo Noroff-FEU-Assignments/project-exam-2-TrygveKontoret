@@ -97,12 +97,12 @@ export const StyledCarousel = styled(Carousel)`
 `;
 
 export const StyledDetailCarousel = styled(Carousel)`
-  width: 80vw;
+  /* max-width: 40vw; */
   margin: auto;
-  margin-top: 30px;
+  margin: 30px;
   border: 2px solid pink;
   .imgCont {
-    width: 80vw;
+    max-width: 100%;
     height: 400px;
     img {
       object-fit: cover;

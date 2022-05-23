@@ -1,7 +1,7 @@
 import { useFetch } from "../../hooks/useFetch";
 import { ACTIVITIES } from "../../utils/api";
 // import { StyledWrapper } from "../featured/FeaturedStyling";
-import { StyledWrapper } from "./ActivitiesStyled";
+import { StyledWrapper } from "./ActivitiesStyles";
 
 const Activities = () => {
   const { data, loading, hasError } = useFetch(ACTIVITIES);
@@ -9,7 +9,7 @@ const Activities = () => {
   return (
     <>
       <StyledWrapper>
-        <h2>Most popular attractions in Bergen</h2>
+        <h2>Explore the most popular attractions in Bergen</h2>
         <div className="wrapper">
           {data.length > 0
             ? data.map((activity, idx) => {
@@ -27,9 +27,12 @@ const Activities = () => {
                     )} */}
                     <h3>{activity.attributes.name}</h3>
                     <p>
-                      {activity.attributes.description.substring(0, 200) +
+                      {activity.attributes.description.substring(0, 150) +
                         "..."}
                     </p>
+                    <div>
+                      <h4>Read more</h4>
+                    </div>
                   </div>
                 );
               })

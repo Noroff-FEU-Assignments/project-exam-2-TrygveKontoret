@@ -33,16 +33,26 @@ export const StyledWrapper = styled.div`
 
       p {
         padding-top: 10px;
+        height: 150px;
+        overflow: hidden;
       }
 
       &:hover {
         transform: scale(1.1);
         transition: 0.5s;
       }
+      h4 {
+        text-align: center;
+        /* position: absolute; */
+        /* bottom: 0; */
+        border-top: 1px solid lightgray;
+      }
 
       h3 {
         /* text-align: center; */
         padding-bottom: 10px;
+        height: 50px;
+        padding-top: 10px;
       }
 
       .imgCont {

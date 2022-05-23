@@ -1,7 +1,7 @@
 import { HOTELS } from "../../utils/api";
 import { starRating } from "../../utils/starsSVG";
 import { useFetch } from "../../hooks/useFetch";
-import { StyledMain } from "./HotelsStyled";
+import { StyledMain } from "./HotelsStyles";
 import { Link } from "react-router-dom";
 
 const Hotels = () => {
