@@ -27,7 +27,7 @@ const Detail = () => {
 
   return (
     <>
-      <BookingForm data={data.data} />
+      {/* <BookingForm data={data.data} /> */}
       {data.data ? (
         <>
           <DetailCarousel data={data.data} />
