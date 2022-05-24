@@ -229,6 +229,7 @@ export const BookingForm = (data, closed) => {
                 />
               </svg>
             </div>
+            <h2>{data.data.attributes.name}</h2>
             <label>Name:</label>
             <input {...register("name")} placeholder="Please enter your name" />
             {errors.name && <span>{errors.name.message}</span>}
@@ -274,12 +275,16 @@ export const BookingForm = (data, closed) => {
             {errors.checkin && <span>{errors.checkin.message}</span>}
 
             <label>Checkout date:</label>
-            <input {...register("checkout")} type="date" min={checkoutDate} />
+            <input
+              {...register("checkout")}
+              type="date"
+              min={formatYmd(new Date())}
+            />
             {errors.checkout && <span>{errors.checkout.message}</span>}
 
             <button>Send</button>
             {success && (
-              <span className="success">Message successfully sent</span>
+              <span className="success">Thank you for your booking!</span>
             )}
           </StyledForm>
         </StyledModal>

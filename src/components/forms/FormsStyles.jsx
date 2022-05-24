@@ -8,8 +8,8 @@ export const StyledForm = styled.form`
   background-color: white;
   border: 2px solid black;
   border-radius: 5px;
-  width: 85%;
-  height: 70%;
+  width: 100%;
+  /* height: 100%; */
   transition: 0.5s;
 
   .cross {
@@ -31,6 +31,9 @@ export const StyledForm = styled.form`
     width: 250px;
     margin: 10px 0 3px 0;
     font-size: 23px;
+  }
+  h2 {
+    width: 250px;
   }
 
   input,
@@ -67,12 +70,19 @@ export const StyledModal = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 999999;
   width: 100%;
   height: 100%;
   /* background-color: black; */
   backdrop-filter: blur(5px);
+  /* overflow: hidden;
+  overflow-x: black; */
   transition: 0.5s;
+
+  /* .StyledForm {
+    width: 80%;
+    height: 80%;
+  } */
 `;
