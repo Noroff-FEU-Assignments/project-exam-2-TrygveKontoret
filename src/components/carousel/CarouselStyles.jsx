@@ -99,7 +99,8 @@ export const StyledCarousel = styled(Carousel)`
 export const StyledDetailCarousel = styled(Carousel)`
   /* max-width: 40vw; */
   /* margin: auto; */
-  margin: 30px;
+  /* margin: 30px; */
+  margin: 30px 0;
   /* border: 2px solid pink; */
   .imgCont {
     max-width: 100%;
