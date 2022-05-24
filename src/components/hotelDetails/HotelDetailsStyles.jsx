@@ -24,6 +24,15 @@ export const StyledDetails = styled.main`
         margin-right: 10px;
       }
     }
+
+    button {
+      width: 25%;
+      padding: 10px;
+      border: 2px solid pink;
+      border-radius: 5px;
+      background-color: green;
+      color: white;
+    }
   }
 
   @media (max-width: 768px) {
@@ -33,6 +42,7 @@ export const StyledDetails = styled.main`
 
     .carouselCont {
       max-width: 90%;
+      padding: 0;
     }
     .hotelDesc {
       width: 90%;

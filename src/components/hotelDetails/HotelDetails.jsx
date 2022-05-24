@@ -13,7 +13,7 @@ import { starRating } from "../../utils/starsSVG";
 const HotelDetails = () => {
   const { id } = useParams();
   // const { data, loading, hasError } = useFetch(HOTELS + "/" + id);
-
+  const [open, setOpen] = useState(false);
   const [data, setData] = useState([]);
   const fetchData = async () => {
     const { data } = await axios.get(HOTELS + "/" + id);
@@ -25,6 +25,10 @@ const HotelDetails = () => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const toggleBooking = () => {
+    setOpen(!open);
+  };
 
   console.log(data);
 
@@ -44,11 +48,13 @@ const HotelDetails = () => {
               <p>User rating: {data.data.attributes.rating}/10</p>
               <p>by: {data.data.attributes.rating_users} users</p>
             </div>
+            <button onClick={setOpen}>Book now!</button>
           </div>
         </StyledDetails>
       ) : (
         "LOADING"
       )}
+      {open && <BookingForm data={data.data} closed={toggleBooking} />}
     </>
   );
 };

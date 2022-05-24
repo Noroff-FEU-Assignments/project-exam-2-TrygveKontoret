@@ -10,6 +10,7 @@ export const Rooms = () => {
   return (
     <>
       <StyledRoom>
+        <h2>Our rooms:</h2>
         <div className="wrapper">
           {data.length > 0
             ? data.map((room, idx) => {

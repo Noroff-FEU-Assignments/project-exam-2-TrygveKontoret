@@ -159,10 +159,11 @@ export const LoginForm = () => {
   );
 };
 
-export const BookingForm = (data) => {
+export const BookingForm = (data, closed) => {
   const dataRef = useRef();
   const [success, setSuccess] = useState(false);
   const [checkoutDate, setCheckoutDate] = useState();
+  const [open, setOpen] = useState(closed);
 
   const {
     register,
@@ -189,31 +190,33 @@ export const BookingForm = (data) => {
     });
     setTimeout(() => {
       setSuccess(false);
+      setOpen(!closed);
     }, 5000);
   };
   const formatYmd = (date) => date.toISOString().slice(0, 10);
 
   return (
     <>
-      <StyledForm onSubmit={handleSubmit(checkSuccess)}>
-        <label>Name:</label>
-        <input {...register("name")} placeholder="Please enter your name" />
-        {errors.name && <span>{errors.name.message}</span>}
+      {open && (
+        <StyledForm onSubmit={handleSubmit(checkSuccess)}>
+          <label>Name:</label>
+          <input {...register("name")} placeholder="Please enter your name" />
+          {errors.name && <span>{errors.name.message}</span>}
 
-        <label>Email:</label>
-        <input {...register("email")} placeholder="Please enter your email" />
-        {errors.email && <span>{errors.email.message}</span>}
+          <label>Email:</label>
+          <input {...register("email")} placeholder="Please enter your email" />
+          {errors.email && <span>{errors.email.message}</span>}
 
-        <label>Room:</label>
-        <select {...register("room")}>
-          <option>Please select room:</option>
-          <option value="Small room">Small room</option>
-          <option value="Medium room">Medium room</option>
-          <option value="Large room">Large room</option>
-        </select>
-        {errors.room && <span>{errors.room.message}</span>}
+          <label>Room:</label>
+          <select {...register("room")}>
+            <option>Please select room:</option>
+            <option value="Small room">Small room</option>
+            <option value="Medium room">Medium room</option>
+            <option value="Large room">Large room</option>
+          </select>
+          {errors.room && <span>{errors.room.message}</span>}
 
-        {/* <label>Checkin date:</label>
+          {/* <label>Checkin date:</label>
         <input
           {...register("checkin")}
           type="date"
@@ -225,25 +228,28 @@ export const BookingForm = (data) => {
         />
         {errors.checkin && <span>{errors.checkin.message}</span>} */}
 
-        <label>Checkin date:</label>
-        <input
-          {...register("checkin")}
-          type="date"
-          min={formatYmd(new Date())}
-          ref={dataRef}
-          onChange={() => {
-            setCheckoutDate(dataRef.current.value);
-          }}
-        />
-        {errors.checkin && <span>{errors.checkin.message}</span>}
+          <label>Checkin date:</label>
+          <input
+            {...register("checkin")}
+            type="date"
+            min={formatYmd(new Date())}
+            // ref={dataRef}
+            // // onChange={() => {
+            // //   setCheckoutDate(dataRef.current.value);
+            // // }}
+          />
+          {errors.checkin && <span>{errors.checkin.message}</span>}
 
-        <label>Checkout date:</label>
-        <input {...register("checkout")} type="date" min={checkoutDate} />
-        {errors.checkout && <span>{errors.checkout.message}</span>}
+          <label>Checkout date:</label>
+          <input {...register("checkout")} type="date" min={checkoutDate} />
+          {errors.checkout && <span>{errors.checkout.message}</span>}
 
-        <button>Send</button>
-        {success && <span className="success">Message successfully sent</span>}
-      </StyledForm>
+          <button>Send</button>
+          {success && (
+            <span className="success">Message successfully sent</span>
+          )}
+        </StyledForm>
+      )}
     </>
   );
 };
