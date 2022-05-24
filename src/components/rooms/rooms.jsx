@@ -25,7 +25,7 @@ export const Rooms = () => {
                   </div>
                 );
               })
-            : "Loading..."}
+            : " "}
         </div>
       </StyledRoom>
     </>

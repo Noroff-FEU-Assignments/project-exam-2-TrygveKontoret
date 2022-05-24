@@ -36,21 +36,26 @@ const HotelDetails = () => {
     <>
       {/* <BookingForm data={data.data} /> */}
       {data.data ? (
-        <StyledDetails>
-          <div className="carouselCont">
-            <DetailCarousel data={data.data} />
-          </div>
-          <div className="hotelDesc">
-            <h1>{data.data.attributes.name}</h1>
-            <div className="stars">{starRating(data.data.attributes.star)}</div>
-            <p>{data.data.attributes.description}</p>
-            <div className="ratings">
-              <p>User rating: {data.data.attributes.rating}/10</p>
-              <p>by: {data.data.attributes.rating_users} users</p>
+        <>
+          <StyledDetails>
+            <div className="carouselCont">
+              <DetailCarousel data={data.data} />
             </div>
-            <button onClick={setOpen}>Book now!</button>
-          </div>
-        </StyledDetails>
+            <div className="hotelDesc">
+              <h1>{data.data.attributes.name}</h1>
+              <div className="stars">
+                {starRating(data.data.attributes.star)}
+              </div>
+              <p>{data.data.attributes.description}</p>
+              <div className="ratings">
+                <p>User rating: {data.data.attributes.rating}/10</p>
+                <p>by: {data.data.attributes.rating_users} users</p>
+              </div>
+              <button onClick={toggleBooking}>Book now!</button>
+            </div>
+          </StyledDetails>
+          <Rooms />
+        </>
       ) : (
         "LOADING"
       )}

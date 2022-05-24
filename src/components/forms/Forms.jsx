@@ -114,11 +114,13 @@ export const LoginForm = () => {
   const navigate = useNavigate();
 
   const [auth, setAuth] = useContext(AuthContext);
+  const [error, setError] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(loginSchema),
   });
@@ -136,6 +138,13 @@ export const LoginForm = () => {
 
   const onSubmit = (FormData) => {
     userLogin(FormData);
+    if (!auth) {
+      setError(!false);
+      reset();
+      setTimeout(() => {
+        setError(false);
+      }, 5000);
+    }
   };
 
   return (
@@ -154,6 +163,7 @@ export const LoginForm = () => {
         {errors.password && <span>{errors.password.message}</span>}
 
         <button>Login</button>
+        {error && <span className="error">Wrong username or password</span>}
       </StyledForm>
     </>
   );
