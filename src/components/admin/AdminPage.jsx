@@ -13,9 +13,9 @@ export const Unauthorized = () => {
     <>
       <StyledUnauthorized>
         <h1>Unauthorized access!</h1>
-        <p>Please log in or return to home:</p>
+        <p>Please login or return to home:</p>
         <Link to="/login">
-          <button>Log in</button>
+          <button>Login</button>
         </Link>
         <Link to="/">
           <button>Home</button>

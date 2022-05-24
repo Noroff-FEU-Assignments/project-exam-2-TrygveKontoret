@@ -79,6 +79,7 @@ export const ContactForm = () => {
   return (
     <>
       <StyledForm onSubmit={handleSubmit(checkSuccess)}>
+        <h1>Contact us:</h1>
         <label>Name:</label>
         <input {...register("name")} placeholder="Please enter your name" />
         {errors.name && <span>{errors.name.message}</span>}
@@ -150,6 +151,7 @@ export const LoginForm = () => {
   return (
     <>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
+        <h1>Login:</h1>
         <label>Username</label>
         <input {...register("username")} placeholder="Your username" />
         {errors.username && <span>{errors.username.message}</span>}
