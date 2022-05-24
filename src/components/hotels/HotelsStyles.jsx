@@ -68,4 +68,28 @@ export const StyledMain = styled.main`
       }
     }
   }
+  @media (max-width: 540px) {
+    .wrapper {
+      .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .imgCont {
+          width: 100%;
+
+          img {
+            border-radius: 5px 5px 0 0;
+          }
+        }
+
+        .textCont {
+          width: 100%;
+          padding-bottom: 5px;
+        }
+      }
+    }
+
+    /* background-color: black; */
+  }
 `;

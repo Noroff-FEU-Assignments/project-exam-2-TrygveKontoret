@@ -4,6 +4,21 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 85%;
+  height: 70%;
+  transition: 0.5s;
+
+  .cross {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    padding-right: 30px;
+    cursor: pointer;
+  }
 
   .success {
     color: green;
@@ -19,7 +34,8 @@ export const StyledForm = styled.form`
   }
 
   input,
-  textarea {
+  textarea,
+  select {
     width: 250px;
     padding: 5px 0;
   }
@@ -47,4 +63,16 @@ export const StyledForm = styled.form`
   }
 `;
 
-// export const StyledLogin = styled.form``;
+export const StyledModal = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  /* background-color: black; */
+  backdrop-filter: blur(5px);
+  transition: 0.5s;
+`;

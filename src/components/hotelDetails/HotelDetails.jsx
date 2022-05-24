@@ -54,7 +54,7 @@ const HotelDetails = () => {
               <button onClick={toggleBooking}>Book now!</button>
             </div>
           </StyledDetails>
-          <Rooms />
+          {/* <Rooms /> */}
         </>
       ) : (
         "LOADING"

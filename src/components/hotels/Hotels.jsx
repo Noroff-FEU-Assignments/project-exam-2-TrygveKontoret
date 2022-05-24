@@ -27,7 +27,7 @@ const Hotels = () => {
                         </div>
                         <div className="desc">
                           <p>
-                            {hotel.attributes.description.substring(0, 150) +
+                            {hotel.attributes.description.substring(0, 100) +
                               "..."}
                           </p>
                           {/* {clientWidth === "400px" ? (

@@ -35,7 +35,10 @@ export const bookingSchema = yup.object().shape({
     .string()
     .email("Invalid email format")
     .required("Please enter your email"),
-  room: yup.string().oneOf(rooms).required("Please select a room"),
+  room: yup
+    .string()
+    .oneOf(rooms, "Please select a room")
+    .required("Please select a room"),
 
   checkin: yup
     .date()

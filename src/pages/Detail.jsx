@@ -80,7 +80,7 @@ const Detail = () => {
     <>
       {/* <BookingForm data={data.data} /> */}
       <HotelDetails />
-      {/* <Rooms /> */}
+      <Rooms />
     </>
   );
 };
