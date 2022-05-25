@@ -2,6 +2,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { ACTIVITIES } from "../../utils/api";
 // import { StyledWrapper } from "../featured/FeaturedStyling";
 import { StyledWrapper } from "./ActivitiesStyles";
+import { Link } from "react-router-dom";
 
 const Activities = () => {
   const { data, loading, hasError } = useFetch(ACTIVITIES);
@@ -14,26 +15,28 @@ const Activities = () => {
           {data.length > 0
             ? data.map((activity, idx) => {
                 return (
-                  <div key={idx} className="card">
-                    <div className="imgCont">
-                      <img src={activity.attributes.img_url} alt="" />
-                    </div>
-                    {/* {activity.attributes.name.length > 23 ? (
+                  <Link to={`/activities/${activity.id}`} key={activity.id}>
+                    <div key={idx} className="card">
+                      <div className="imgCont">
+                        <img src={activity.attributes.img_url} alt="" />
+                      </div>
+                      {/* {activity.attributes.name.length > 23 ? (
                       <h3>
                         {activity.attributes.name.substring(0, 23) + "..."}
                       </h3>
                     ) : (
                       <h3>{activity.attributes.name}</h3>
                     )} */}
-                    <h3>{activity.attributes.name}</h3>
-                    <p>
-                      {activity.attributes.description.substring(0, 150) +
-                        "..."}
-                    </p>
-                    <div>
-                      <h4>Read more</h4>
+                      <h3>{activity.attributes.name}</h3>
+                      <p>
+                        {activity.attributes.description.substring(0, 150) +
+                          "..."}
+                      </p>
+                      <div>
+                        <h4>Read more</h4>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 );
               })
             : "Loading..."}

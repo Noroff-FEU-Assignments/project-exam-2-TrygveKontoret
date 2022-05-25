@@ -252,27 +252,11 @@ export const BookingForm = (data, closed) => {
             </select>
             {errors.room && <span>{errors.room.message}</span>}
 
-            {/* <label>Checkin date:</label>
-        <input
-          {...register("checkin")}
-          type="date"
-          min={formatYmd(new Date())}
-          ref={dateRef}
-          onChange={() => {
-            setCheckoutDate(dateRef.current.value);
-          }}
-        />
-        {errors.checkin && <span>{errors.checkin.message}</span>} */}
-
             <label>Checkin date:</label>
             <input
               {...register("checkin")}
               type="date"
               min={formatYmd(new Date())}
-              // ref={dataRef}
-              // // onChange={() => {
-              // //   setCheckoutDate(dataRef.current.value);
-              // // }}
             />
             {errors.checkin && <span>{errors.checkin.message}</span>}
 

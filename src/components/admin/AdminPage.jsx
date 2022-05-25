@@ -1,8 +1,12 @@
 import React from "react";
 import { StyledUnauthorized } from "./AdminStyles";
 import { Link } from "react-router-dom";
+import { useFetch } from "../../hooks/useFetch";
+import { BOOKING_URL } from "../../utils/api";
 
 const AdminPage = () => {
+  const { data, loading, hasError } = useFetch(BOOKING_URL);
+
   return <div>Welcome</div>;
 };
 

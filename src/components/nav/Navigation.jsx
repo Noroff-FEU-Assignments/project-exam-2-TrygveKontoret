@@ -9,6 +9,7 @@ import { useState, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
+import Search from "../search/Search";
 
 const Navigation = () => {
   const bar1Ref = useRef();
@@ -51,11 +52,13 @@ const Navigation = () => {
             />
           </svg>
         </div>
+
         <div className="searchbar">
-          <input type="text" placeholder="Search" />
+          <Search />
+          {/* <input type="text" placeholder="Search" />
           <div className="searchbtn">
             <p>Go</p>
-          </div>
+          </div> */}
         </div>
         <nav>
           <ul>

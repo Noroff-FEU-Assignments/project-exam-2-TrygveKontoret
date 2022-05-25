@@ -85,3 +85,28 @@ export const RoomCarousel = (room) => {
     </StyledRoomCarousel>
   );
 };
+
+export const ActivityCarousel = (data) => {
+  return (
+    <StyledDetailCarousel
+      infiniteLoop
+      showStatus={false}
+      showThumbs={false}
+      showArrows={true}
+      stopOnHover={false}
+    >
+      <div className="imgCont">
+        <img
+          src={data.data.attributes.img_url}
+          alt={data.data.attributes.name}
+        />
+      </div>
+      <div className="imgCont">
+        <img
+          src={data.data.attributes.img_url2}
+          alt={data.data.attributes.name}
+        />
+      </div>
+    </StyledDetailCarousel>
+  );
+};
