@@ -24,7 +24,7 @@ const HotelDetails = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [id]);
 
   const toggleBooking = () => {
     setOpen(!open);

@@ -1,15 +1,56 @@
 import React from "react";
-import { StyledSearch } from "./SearchStyles";
+import { StyledSearch, StyledInput } from "./SearchStyles";
 import { useFetch } from "../../hooks/useFetch";
 import { HOTELS } from "../../utils/api";
+import { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Search = () => {
   const { data, loading, error } = useFetch(HOTELS);
+  const [searchWord, setSearchWord] = useState("");
+
+  console.log(data);
 
   return (
-    <StyledSearch>
-      <input type="text" placeholder="Search hotels" />
-    </StyledSearch>
+    <>
+      <StyledInput>
+        <input
+          type="text"
+          placeholder="Search hotels"
+          onChange={(event) => setSearchWord(event.target.value)}
+          value={searchWord}
+          onBlur={() =>
+            setTimeout(() => {
+              setSearchWord("");
+            }, 150)
+          }
+        />
+      </StyledInput>
+      <StyledSearch>
+        {data
+          .filter((hotel) => {
+            if (searchWord === "") {
+              return "";
+            } else if (
+              hotel.attributes.name
+                .toLowerCase()
+                .includes(searchWord.toLowerCase())
+            ) {
+              return hotel;
+            }
+          })
+          .map((hotel, index) => (
+            <Link to={`/hotels/${hotel.id}`} key={index}>
+              <div className="searchRes">
+                <h4>{hotel.attributes.name}</h4>
+                <div className="imgCont">
+                  <img src={hotel.attributes.img_url} alt="" />
+                </div>
+              </div>
+            </Link>
+          ))}
+      </StyledSearch>
+    </>
   );
 };
 
