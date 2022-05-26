@@ -127,25 +127,26 @@ export const LoginForm = () => {
   });
 
   const userLogin = async (FormData) => {
-    const responseData = await axios.post(AUTH_URL, {
-      identifier: FormData.username,
-      password: FormData.password,
-    });
+    try {
+      const responseData = await axios.post(AUTH_URL, {
+        identifier: FormData.username,
+        password: FormData.password,
+      });
 
-    setAuth(responseData.data.jwt);
-    console.log(auth);
-    navigate("/admin");
-  };
-
-  const onSubmit = (FormData) => {
-    userLogin(FormData);
-    if (!auth) {
+      setAuth(responseData.data.jwt);
+      console.log(auth);
+      navigate("/admin");
+    } catch (error) {
       setError(!false);
       reset();
       setTimeout(() => {
         setError(false);
       }, 5000);
     }
+  };
+
+  const onSubmit = (FormData) => {
+    userLogin(FormData);
   };
 
   return (

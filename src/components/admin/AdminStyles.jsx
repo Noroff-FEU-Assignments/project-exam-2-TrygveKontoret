@@ -19,7 +19,7 @@ export const StyledUnauthorized = styled.main`
 export const StyledMessage = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 10px;
   margin: 10px;
 
   .card {
