@@ -15,3 +15,22 @@ export const StyledUnauthorized = styled.main`
     padding: 10px 20px;
   }
 `;
+
+export const StyledMessage = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  margin: 10px;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    max-width: 300px;
+    padding: 10px;
+
+    p {
+      max-width: 300px;
+    }
+  }
+`;
