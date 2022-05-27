@@ -6,10 +6,10 @@ export const StyledForm = styled.form`
   align-items: center;
   justify-content: center;
   background-color: white;
-  /* border: 2px solid black; */
+  border: 2px solid #293070;
   border-radius: 5px;
-  width: 60%;
-  margin: auto;
+  width: 50%;
+  margin: 30px auto;
   /* height: 100%; */
   transition: 0.5s;
 

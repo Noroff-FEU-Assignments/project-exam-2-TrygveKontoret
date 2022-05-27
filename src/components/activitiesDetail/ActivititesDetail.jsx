@@ -4,6 +4,7 @@ import axios from "axios";
 import { ACTIVITIES } from "../../utils/api";
 import { StyledDetails } from "../hotelDetails/HotelDetailsStyles";
 import { ActivityCarousel } from "../carousel/Carousel";
+import { StyledActivity } from "./ActivititesDetailStyled";
 
 export const ActivitiesDetail = () => {
   const { id } = useParams();
@@ -22,15 +23,17 @@ export const ActivitiesDetail = () => {
   return (
     <>
       {data.data ? (
-        <StyledDetails>
-          <div className="carouselCont">
-            <ActivityCarousel data={data.data} />
-          </div>
-          <div className="hotelDesc">
-            <h1>{data.data.attributes.name}</h1>
-            <p>{data.data.attributes.description}</p>
-          </div>
-        </StyledDetails>
+        <StyledActivity>
+          <StyledDetails>
+            <div className="carouselCont">
+              <ActivityCarousel data={data.data} />
+            </div>
+            <div className="hotelDesc">
+              <h1>{data.data.attributes.name}</h1>
+              <p>{data.data.attributes.description}</p>
+            </div>
+          </StyledDetails>
+        </StyledActivity>
       ) : (
         "Loading.."
       )}
