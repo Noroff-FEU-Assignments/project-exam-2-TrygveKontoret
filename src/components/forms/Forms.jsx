@@ -344,8 +344,10 @@ export const HotelForm = () => {
         />
         {errors.userRating && <span>{errors.userRating.message}</span>}
 
-        <label>Featured:</label>
-        <input type="checkbox" {...register("featured")} />
+        <div className="featured">
+          <label>Featured:</label>
+          <input type="checkbox" {...register("featured")} />
+        </div>
 
         <button>Send</button>
         {success && <span className="success">Hotel succesfully added</span>}

@@ -8,7 +8,8 @@ export const StyledForm = styled.form`
   background-color: white;
   /* border: 2px solid black; */
   border-radius: 5px;
-  width: 100%;
+  width: 60%;
+  margin: auto;
   /* height: 100%; */
   transition: 0.5s;
 
@@ -40,12 +41,25 @@ export const StyledForm = styled.form`
   textarea,
   select {
     width: 250px;
-    padding: 5px 0;
+    padding: 5px;
   }
 
   span {
     color: red;
     font-weight: bold;
+  }
+
+  .featured {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    label {
+      width: 100%;
+    }
+    input {
+      font-size: 10px;
+    }
   }
 
   button {

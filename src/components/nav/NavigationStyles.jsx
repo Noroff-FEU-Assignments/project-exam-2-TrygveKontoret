@@ -17,7 +17,7 @@ export const StyledHeader = styled.header`
     display: flex;
     width: 40%;
     @media (max-width: 768px) {
-      display: none;
+      width: 60%;
     }
 
     input {

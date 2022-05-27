@@ -42,4 +42,33 @@ export const StyledSearch = styled.div`
       }
     }
   }
+  @media (max-width: 768px) {
+    .searchRes {
+      width: 50vw;
+      .imgCont {
+        height: 60px;
+        width: 60px;
+      }
+
+      h4 {
+        padding-left: 5px;
+        font-size: smaller;
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    .searchRes {
+      width: 50vw;
+      .imgCont {
+        height: 50px;
+        width: 50px;
+      }
+
+      h4 {
+        padding-left: 5px;
+        font-size: smaller;
+      }
+    }
+  }
 `;
