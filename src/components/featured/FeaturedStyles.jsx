@@ -31,13 +31,13 @@ export const StyledWrapper = styled.div`
           rgba(17, 17, 26, 0.05) 0px 8px 32px;
       }
 
-      p {
+      /* p {
         padding-top: 10px;
-      }
+      } */
 
       h3 {
         /* text-align: center; */
-        padding-bottom: 10px;
+        /* padding-bottom: 10px; */
         padding-top: 10px;
       }
 
@@ -57,7 +57,7 @@ export const StyledWrapper = styled.div`
 
       .rating {
         display: flex;
-        margin-top: 10px;
+        /* margin-top: 10px; */
         p {
           margin-right: 5px;
         }

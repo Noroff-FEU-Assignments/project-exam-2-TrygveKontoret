@@ -26,12 +26,14 @@ export const StyledDetails = styled.main`
     }
 
     button {
-      width: 25%;
-      padding: 10px;
-      border: 2px solid pink;
+      width: 30%;
+      padding: 15px;
+      border: none;
       border-radius: 5px;
-      background-color: green;
-      color: white;
+      background-color: #86cd82;
+      color: black;
+      font-size: 18px;
+      cursor: pointer;
     }
   }
 

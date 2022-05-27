@@ -63,20 +63,19 @@ export const StyledForm = styled.form`
   }
 
   button {
-    /* background-color: green; */
-    border: 2px solid blue;
+    width: 30%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #86cd82;
     color: black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px;
-    border-radius: 8px;
+    font-size: 18px;
+    margin: 15px 0;
+    cursor: pointer;
 
-    &:hover {
+    /* &:hover {
       cursor: pointer;
-    }
+    } */
   }
 
   @media (max-width: 540px) {

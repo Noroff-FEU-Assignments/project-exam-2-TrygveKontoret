@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledMessage, StyledUnauthorized } from "./AdminStyles";
+import { StyledAdmin, StyledMessage, StyledUnauthorized } from "./AdminStyles";
 import { Link } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import { BOOKING_URL, MSG_URL } from "../../utils/api";
@@ -17,8 +17,6 @@ export const MessageAdmin = () => {
     setData(data.data);
   };
 
-  console.log(data.data);
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -30,6 +28,7 @@ export const MessageAdmin = () => {
   return (
     <>
       <StyledMessage>
+        <h2>Messages:</h2>
         <div className="wrapper">
           {data.length > 0
             ? data.map((message, idx) => {
@@ -73,7 +72,7 @@ export const BookingAdmin = () => {
     setData(data.data);
   };
 
-  console.log(data.data);
+  // console.log(data.data);
 
   useEffect(() => {
     fetchData();
@@ -86,6 +85,7 @@ export const BookingAdmin = () => {
   return (
     <>
       <StyledMessage>
+        <h2>Bookings:</h2>
         <div className="wrapper">
           {data.length > 0
             ? data.map((booking, idx) => {
@@ -130,12 +130,14 @@ export const AdminPage = () => {
 
   return (
     <>
-      <h1>Welcome Admin!</h1>
-      <div>
-        <button onClick={() => setCurrent(0)}>Messages</button>
-        <button onClick={() => setCurrent(1)}>Bookings</button>
-        <button onClick={() => setCurrent(2)}>Create new hotel</button>
-      </div>
+      <StyledAdmin>
+        <h1>Welcome Admin!</h1>
+        <div>
+          <button onClick={() => setCurrent(0)}>Messages</button>
+          <button onClick={() => setCurrent(1)}>Bookings</button>
+          <button onClick={() => setCurrent(2)}>Create new hotel</button>
+        </div>
+      </StyledAdmin>
       {current === 0 && <MessageAdmin />}
       {current === 1 && <BookingAdmin />}
       {current === 2 && <HotelForm />}

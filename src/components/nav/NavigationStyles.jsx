@@ -7,10 +7,15 @@ export const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid white;
+  background-color: #293070;
+  height: 75px;
 
   .logo {
     width: 25%;
+    svg {
+      width: 100%;
+    }
   }
 
   .searchbar {
@@ -26,10 +31,6 @@ export const StyledHeader = styled.header`
       /* border: none; */
       outline: none;
     }
-    .searchbtn {
-      padding: 5px 15px;
-      border: 1px solid black;
-    }
   }
 
   nav {
@@ -39,6 +40,7 @@ export const StyledHeader = styled.header`
 
       li {
         margin: 20px;
+        color: white;
       }
     }
 
@@ -56,7 +58,7 @@ export const StyledHamburger = styled.div`
   .bar3 {
     width: 35px;
     height: 5px;
-    background-color: black;
+    background-color: white;
     margin: 6px 0;
     transition: 0.4s;
   }
@@ -86,7 +88,7 @@ export const StyledBurgerNav = styled(motionNav)`
   flex-direction: column;
   align-items: center;
   z-index: 9999;
-  background-color: lightblue;
+  background-color: #293070;
   height: 100vh;
 
   .searchbar {
@@ -104,11 +106,6 @@ export const StyledBurgerNav = styled(motionNav)`
       padding: 5px;
       margin: 10px auto;
     }
-
-    .searchbtnBurger {
-      padding: 5px 15px;
-      border: 1px solid black;
-    }
   }
 
   ul {
@@ -119,7 +116,7 @@ export const StyledBurgerNav = styled(motionNav)`
     width: 100%;
 
     a {
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid white;
       width: 100%;
       padding: 30px 0;
 
@@ -128,6 +125,7 @@ export const StyledBurgerNav = styled(motionNav)`
         justify-content: center;
         width: 100%;
         margin: 0px 0;
+        color: white;
         /* padding: 30px; */
       }
     }

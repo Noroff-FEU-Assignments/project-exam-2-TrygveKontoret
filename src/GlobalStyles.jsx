@@ -19,10 +19,14 @@ const GlobalStyles = createGlobalStyle`
     }
     h1, h2, h3 {
         font-family: 'Lato', sans-serif;
+        color: #293070;
     }
+    /* p {
+       color: #293070;
+    } */
 
     a {
-        color: black;
+        color: #293070;
     }
 
     
