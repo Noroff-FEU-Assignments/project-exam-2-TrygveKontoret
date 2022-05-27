@@ -10,6 +10,7 @@ const Featured = () => {
   return (
     <>
       <StyledWrapper>
+        <h1>Welcome to Holidaze! Book your hotel in Bergen now!</h1>
         <h2>Most popular hotels</h2>
         <div className="wrapper">
           {data.length > 0

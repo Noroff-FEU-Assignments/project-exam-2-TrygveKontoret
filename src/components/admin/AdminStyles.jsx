@@ -75,4 +75,14 @@ export const StyledAdmin = styled.div`
       cursor: pointer;
     }
   }
+
+  @media (max-width: 776px) {
+    div {
+      flex-wrap: wrap;
+
+      button {
+        width: 250px;
+      }
+    }
+  }
 `;

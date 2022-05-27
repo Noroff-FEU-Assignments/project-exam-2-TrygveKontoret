@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
 export const StyledWrapper = styled.div`
-  margin-top: 30px;
+  h1 {
+    margin-top: 30px;
+    padding-left: 25px;
+  }
 
   h2 {
     margin-top: 30px;
     padding-left: 25px;
-    font-size: 35px;
+    font-size: 25px;
   }
   .wrapper {
     display: grid;
