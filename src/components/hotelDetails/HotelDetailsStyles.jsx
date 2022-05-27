@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledDetails = styled.main`
+  margin: 80px 0;
   display: flex;
   .carouselCont {
     max-width: 50%;
