@@ -87,17 +87,22 @@ export const StyledBurgerNav = styled(motionNav)`
   align-items: center;
   z-index: 9999;
   background-color: lightblue;
+  height: 100vh;
 
   .searchbar {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items: center;
+    justify-content: center; */
     width: 100%;
     margin-bottom: 20px;
 
     input {
-      width: 80%;
+      display: flex;
+      justify-content: center;
+      width: 50%;
       padding: 5px;
+      margin: 10px auto;
     }
 
     .searchbtnBurger {
@@ -109,19 +114,21 @@ export const StyledBurgerNav = styled(motionNav)`
   ul {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     align-items: center;
     width: 100%;
 
     a {
       border-bottom: 1px solid black;
       width: 100%;
+      padding: 30px 0;
 
       li {
         display: flex;
         justify-content: center;
         width: 100%;
-        margin: 20px 0;
+        margin: 0px 0;
+        /* padding: 30px; */
       }
     }
   }

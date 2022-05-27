@@ -25,6 +25,12 @@ export const StyledMain = styled.main`
       width: 100%;
       border-radius: 10px 0px 0px 10px;
       box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+      transition: 0.5s;
+
+      &:hover {
+        transform: scale(1.05);
+        transition: 0.5s;
+      }
 
       .textCont {
         display: flex;

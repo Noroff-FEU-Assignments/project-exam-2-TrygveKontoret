@@ -98,10 +98,7 @@ const Navigation = () => {
             exit={{ y: "-150%" }}
           >
             <div className="searchbar">
-              <input type="text" placeholder="Search" />
-              <div className="searchbtnBurger">
-                <p>Go</p>
-              </div>
+              <Search />
             </div>
             <ul>
               <Link to="/" onClick={toggleOpen}>

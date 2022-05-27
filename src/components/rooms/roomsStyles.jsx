@@ -15,4 +15,13 @@ export const StyledRoom = styled.div`
   h2 {
     padding-left: 30px;
   }
+
+  @media (max-width: 450px) {
+    .wrapper {
+      padding: 10px;
+    }
+    h2 {
+      padding-left: 10px;
+    }
+  }
 `;

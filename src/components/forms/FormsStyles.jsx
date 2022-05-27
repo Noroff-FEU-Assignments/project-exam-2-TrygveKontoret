@@ -8,7 +8,7 @@ export const StyledForm = styled.form`
   background-color: white;
   /* border: 2px solid black; */
   border-radius: 5px;
-  width: 100%;
+  width: 500px;
   /* height: 100%; */
   transition: 0.5s;
 
@@ -63,6 +63,10 @@ export const StyledForm = styled.form`
     &:hover {
       cursor: pointer;
     }
+  }
+
+  @media (max-width: 540px) {
+    width: 100%;
   }
 `;
 
