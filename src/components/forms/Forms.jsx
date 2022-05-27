@@ -7,8 +7,8 @@ import { useContext } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
-import { loginSchema, bookingSchema } from "../../utils/schemas";
-import { AUTH_URL, BOOKING_URL, MSG_URL } from "../../utils/api";
+import { loginSchema, bookingSchema, hotelSchema } from "../../utils/schemas";
+import { AUTH_URL, BOOKING_URL, MSG_URL, HOTELS } from "../../utils/api";
 
 export const ContactForm = () => {
   const [success, setSuccess] = useState(false);
@@ -22,27 +22,9 @@ export const ContactForm = () => {
     resolver: yupResolver(contactSchema),
   });
 
-  // console.log(MSG_URL);
-
-  // const responseData = axios.post(MSG_URL, {
-  //   name: FormData.name,
-  //   email: FormData.email,
-  //   subject: FormData.subject,
-  //   message: FormData.message,
-  // });
-
   const checkSuccess = (FormData) => {
     setSuccess(true);
     reset();
-    // const axios = require("axios");
-    // let data = JSON.stringify({
-    //   data: {
-    //     name: FormData.name,
-    //     email: FormData.email,
-    //     subject: FormData.subject,
-    //     message: FormData.message,
-    //   },
-    // });
 
     let data = axios.post(MSG_URL, {
       data: {
@@ -53,24 +35,6 @@ export const ContactForm = () => {
       },
     });
 
-    // let config = {
-    //   method: "post",
-    //   url: MSG_URL,
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   data: data,
-    // };
-
-    // axios(config)
-    //   .then((response) => {
-    //     console.log(JSON.stringify(response.data));
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-
-    // responseData(FormData);
     setTimeout(() => {
       setSuccess(false);
     }, 5000);
@@ -276,6 +240,116 @@ export const BookingForm = (data, closed) => {
           </StyledForm>
         </StyledModal>
       )}
+    </>
+  );
+};
+
+export const HotelForm = () => {
+  const [success, setSuccess] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(hotelSchema),
+  });
+
+  const checkSuccess = (FormData) => {
+    setSuccess(true);
+    reset();
+
+    let data = axios.post(HOTELS, {
+      data: {
+        name: FormData.name,
+        description: FormData.description,
+        img_url: FormData.image1,
+        img_url2: FormData.image2,
+        img_url3: FormData.image3,
+        img_url4: FormData.image4,
+        star: FormData.star,
+        rating: FormData.rating,
+        rating_users: FormData.userRating,
+        featured: FormData.featured,
+      },
+    });
+
+    setTimeout(() => {
+      setSuccess(false);
+    }, 5000);
+  };
+
+  return (
+    <>
+      <StyledForm onSubmit={handleSubmit(checkSuccess)}>
+        <label>Hotel name:</label>
+        <input {...register("name")} placeholder="Please enter hotel name" />
+        {errors.name && <span>{errors.name.message}</span>}
+
+        <label>Hotel description:</label>
+        <textarea
+          rows="10"
+          {...register("description")}
+          placeholder="Please enter hotel description"
+        />
+        {errors.description && <span>{errors.description.message}</span>}
+
+        <label>Image 1:</label>
+        <input
+          {...register("image1")}
+          placeholder="Please enter your image URL"
+        />
+        {errors.image1 && <span>{errors.image1.message}</span>}
+
+        <label>Image 2:</label>
+        <input
+          {...register("image2")}
+          placeholder="Please enter your image URL"
+        />
+        {errors.image2 && <span>{errors.image2.message}</span>}
+
+        <label>Image 3:</label>
+        <input
+          {...register("image3")}
+          placeholder="Please enter your image URL"
+        />
+        {errors.image3 && <span>{errors.image3.message}</span>}
+
+        <label>Image 4:</label>
+        <input
+          {...register("image4")}
+          placeholder="Please enter your image URL"
+        />
+        {errors.image4 && <span>{errors.image4.message}</span>}
+
+        <label>Stars:</label>
+        <input
+          {...register("star")}
+          placeholder="Please fill in amount of stars"
+        />
+        {errors.star && <span>{errors.star.message}</span>}
+
+        <label>User rating:</label>
+        <input
+          {...register("rating")}
+          placeholder="Please fill in user rating"
+        />
+        {errors.rating && <span>{errors.rating.message}</span>}
+
+        <label>Amount of users:</label>
+        <input
+          {...register("userRating")}
+          placeholder="Please fill in amount of users"
+        />
+        {errors.userRating && <span>{errors.userRating.message}</span>}
+
+        <label>Featured:</label>
+        <input type="checkbox" {...register("featured")} />
+
+        <button>Send</button>
+        {success && <span className="success">Hotel succesfully added</span>}
+      </StyledForm>
     </>
   );
 };

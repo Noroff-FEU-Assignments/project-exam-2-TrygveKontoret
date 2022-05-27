@@ -52,4 +52,58 @@ export const bookingSchema = yup.object().shape({
     .required("Please input checkout date"),
 });
 
-// room: yup.string().oneOf(rooms).required("Please select a room"),
+const imageRegex = /^https?:\/\/.*\/.*\.(png|gif|webp|jpeg|jpg)\??.*$/gim;
+
+export const hotelSchema = yup.object().shape({
+  name: yup
+    .string()
+    .min(3, "Hotel name must be at least 3 characters")
+    .required("Please enter hotel name"),
+
+  description: yup
+    .string()
+    .min(300, "Hotel description must be at least 300 characters")
+    .required("Please enter hotel description"),
+
+  image1: yup
+    .string()
+    .matches(imageRegex, "Wrong image format")
+    .required("Please fill in image url"),
+
+  image2: yup
+    .string()
+    .matches(imageRegex, "Wrong image format")
+    .required("Please fill in image url"),
+
+  image3: yup
+    .string()
+    .matches(imageRegex, "Wrong image format")
+    .required("Please fill in image url"),
+
+  image4: yup
+    .string()
+    .matches(imageRegex, "Wrong image format")
+    .required("Please fill in image url"),
+
+  star: yup
+    .number()
+    .typeError("Must be a number")
+    .min(1, "Must be at least one star")
+    .max(5, "Can't be more than five stars")
+    .required("Please enter amount of hotel stars"),
+
+  rating: yup
+    .number()
+    .typeError("Must be a number")
+    .min(0)
+    .max(10, "rating can't be higher than 10")
+    .required("Please fill in user rating"),
+
+  userRating: yup
+    .number()
+    .typeError("Must be a number")
+    .min(1, "Must be at least one user rating")
+    .required("Please fill in amount of users"),
+
+  featured: yup.boolean(),
+});
