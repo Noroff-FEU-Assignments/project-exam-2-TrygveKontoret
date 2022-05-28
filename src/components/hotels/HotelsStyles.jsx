@@ -28,7 +28,7 @@ export const StyledMain = styled.main`
       transition: 0.5s;
 
       &:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
         transition: 0.5s;
       }
 

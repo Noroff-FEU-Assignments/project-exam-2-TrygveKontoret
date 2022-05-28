@@ -20,6 +20,7 @@ export const StyledMessage = styled.div`
   width: 100%;
   h2 {
     margin-left: 25px;
+    margin-top: 30px;
   }
   .wrapper {
     display: grid;
@@ -48,9 +49,9 @@ export const StyledMessage = styled.div`
         cursor: pointer;
       }
 
-      p {
+      /* p {
         max-width: 300px;
-      }
+      } */
     }
   }
 `;

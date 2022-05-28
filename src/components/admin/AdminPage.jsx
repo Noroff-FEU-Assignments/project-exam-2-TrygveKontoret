@@ -217,7 +217,7 @@ export const AdminPage = () => {
         <div>
           <button onClick={() => setCurrent(0)}>Messages</button>
           <button onClick={() => setCurrent(1)}>Bookings</button>
-          <button onClick={() => setCurrent(2)}>Create new hotel</button>
+          <button onClick={() => setCurrent(2)}>Add new hotel</button>
           <button onClick={() => setCurrent(3)}>Delete hotels</button>
           <button className="logout" onClick={() => logOut()}>
             Log out
