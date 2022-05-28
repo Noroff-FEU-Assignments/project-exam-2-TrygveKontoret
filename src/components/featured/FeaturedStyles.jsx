@@ -67,4 +67,9 @@ export const StyledWrapper = styled.div`
       }
     }
   }
+  @media (min-width: 431px) {
+    h1 {
+      display: none;
+    }
+  }
 `;

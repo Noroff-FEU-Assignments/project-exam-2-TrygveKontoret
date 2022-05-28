@@ -7,7 +7,6 @@ export const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid white;
   background-color: #293070;
   height: 75px;
 
@@ -90,6 +89,7 @@ export const StyledBurgerNav = styled(motionNav)`
   z-index: 9999;
   background-color: #293070;
   height: 100vh;
+  border-top: 1px solid white;
 
   .searchbar {
     /* display: flex;

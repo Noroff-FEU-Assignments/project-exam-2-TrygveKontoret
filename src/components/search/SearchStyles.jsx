@@ -13,7 +13,7 @@ export const StyledInput = styled.div`
 
 export const StyledSearch = styled.div`
   position: absolute;
-  top: 7%;
+  top: 5%;
   width: 40%;
   z-index: 9999;
 

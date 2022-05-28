@@ -23,9 +23,8 @@ export const StyledWrapper = styled.div`
       padding: 10px;
       /* margin-bottom: 30px; */
       transition: 0.5s;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+        rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
       border-radius: 5px;
       margin: 25px;
       /* width: 24%;
@@ -40,6 +39,8 @@ export const StyledWrapper = styled.div`
       &:hover {
         transform: scale(1.05);
         transition: 0.5s;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+          rgba(17, 17, 26, 0.05) 0px 8px 32px;
       }
       h4 {
         text-align: center;

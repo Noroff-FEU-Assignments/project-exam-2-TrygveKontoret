@@ -7,28 +7,36 @@ import {
   StyledCarousel,
   StyledDetailCarousel,
   StyledRoomCarousel,
+  StyledWelcome,
 } from "./CarouselStyles";
 
 const Carousel = () => {
   return (
-    <StyledCarousel
-      infiniteLoop
-      autoPlay
-      showStatus={false}
-      showThumbs={false}
-      showArrows={false}
-      stopOnHover={false}
-    >
-      <div>
-        <img src={bergen1} alt="Bryggen in Bergen" />
-      </div>
-      <div>
-        <img src={bergen2} alt="Overlook of Bergen city" />
-      </div>
-      <div>
-        <img src={bergen3} alt="Bryggen in Bergen" />
-      </div>
-    </StyledCarousel>
+    <>
+      <StyledWelcome>
+        <div>
+          <h1>Welcome to Holidaze! Book your hotel in Bergen now!</h1>
+        </div>
+      </StyledWelcome>
+      <StyledCarousel
+        infiniteLoop
+        autoPlay
+        showStatus={false}
+        showThumbs={false}
+        showArrows={false}
+        stopOnHover={false}
+      >
+        <div>
+          <img src={bergen1} alt="Bryggen in Bergen" />
+        </div>
+        <div>
+          <img src={bergen2} alt="Overlook of Bergen city" />
+        </div>
+        <div>
+          <img src={bergen3} alt="Bryggen in Bergen" />
+        </div>
+      </StyledCarousel>
+    </>
   );
 };
 
@@ -42,6 +50,7 @@ export const DetailCarousel = (data) => {
       showThumbs={false}
       showArrows={true}
       stopOnHover={false}
+      swipeable={false}
     >
       <div className="imgCont">
         {/* <p>{data.name}</p> */}
@@ -71,6 +80,7 @@ export const RoomCarousel = (room) => {
       showThumbs={false}
       showArrows={true}
       stopOnHover={false}
+      swipeable={false}
     >
       <div className="imgCont">
         {/* <p>{data.name}</p> */}
@@ -94,6 +104,7 @@ export const ActivityCarousel = (data) => {
       showThumbs={false}
       showArrows={true}
       stopOnHover={false}
+      swipeable={false}
     >
       <div className="imgCont">
         <img

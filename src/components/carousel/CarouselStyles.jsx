@@ -7,6 +7,10 @@ export const StyledCarousel = styled(Carousel)`
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
       rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
+
+  .legend {
+    height: 200px;
+  }
   .control-dots {
     .dot {
       background-color: white;
@@ -126,5 +130,71 @@ export const StyledRoomCarousel = styled(Carousel)`
       width: 100%;
       border-radius: 5px;
     }
+  }
+`;
+
+export const StyledWelcome = styled.div`
+  position: absolute;
+  z-index: 9999999999;
+  top: 30%;
+  width: 100%;
+
+  /* background-color: white; */
+
+  div {
+    background-color: #ffffffc0;
+    /* box-shadow: 0 0 20px 0px white; */
+
+    margin: 0 auto;
+    width: 50%;
+    padding: 20px 40px;
+    border-radius: 10px;
+    h1 {
+      text-align: center;
+      /* backdrop-filter: blur(5px); */
+
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 1600px) {
+    top: 25%;
+  }
+
+  @media (max-width: 1400px) {
+    top: 20%;
+  }
+
+  @media (max-width: 955px) {
+    top: 15%;
+  }
+
+  @media (max-width: 610px) {
+    top: 15%;
+    div {
+      width: 70%;
+    }
+  }
+
+  @media (max-width: 547px) {
+    top: 13%;
+    div {
+      width: 75%;
+    }
+  }
+
+  @media (max-width: 510px) {
+    top: 13%;
+    div {
+      width: 75%;
+
+      h1 {
+        font-size: 25px;
+      }
+    }
+  }
+
+  @media (max-width: 430px) {
+    display: none;
   }
 `;
