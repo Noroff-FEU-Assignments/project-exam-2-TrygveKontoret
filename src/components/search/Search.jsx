@@ -25,6 +25,7 @@ const Search = () => {
       </StyledInput>
       <StyledSearch>
         {data
+          // eslint-disable-next-line
           .filter((hotel) => {
             if (searchWord === "") {
               return "";
@@ -41,7 +42,10 @@ const Search = () => {
               <div className="searchRes">
                 <h4>{hotel.attributes.name}</h4>
                 <div className="imgCont">
-                  <img src={hotel.attributes.img_url} alt="" />
+                  <img
+                    src={hotel.attributes.img_url}
+                    alt={hotel.attributes.name}
+                  />
                 </div>
               </div>
             </Link>

@@ -17,7 +17,10 @@ const Activities = () => {
                   <Link to={`/activities/${activity.id}`} key={activity.id}>
                     <div key={idx} className="card">
                       <div className="imgCont">
-                        <img src={activity.attributes.img_url} alt="" />
+                        <img
+                          src={activity.attributes.img_url}
+                          alt={activity.attributes.name}
+                        />
                       </div>
                       <h3>{activity.attributes.name}</h3>
                       <p>

@@ -83,14 +83,22 @@ export const RoomCarousel = (room) => {
       swipeable={false}
     >
       <div className="imgCont">
-        {/* <p>{data.name}</p> */}
-        <img src={room.data.attributes.img_url} alt="Bryggen in Bergen" />
+        <img
+          src={room.data.attributes.img_url}
+          alt={room.data.attributes.name}
+        />
       </div>
       <div className="imgCont">
-        <img src={room.data.attributes.img_url2} alt="" />
+        <img
+          src={room.data.attributes.img_url2}
+          alt="Overlook of Bergen city"
+        />
       </div>
       <div className="imgCont">
-        <img src={room.data.attributes.img_url3} alt="Bryggen in Bergen" />
+        <img
+          src={room.data.attributes.img_url3}
+          alt={room.data.attributes.name}
+        />
       </div>
     </StyledRoomCarousel>
   );

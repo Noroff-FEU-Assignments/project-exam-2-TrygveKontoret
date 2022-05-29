@@ -20,7 +20,10 @@ const Featured = () => {
                     <Link to={`/hotels/${featured.id}`} key={featured.id}>
                       <div key={idx} className="card">
                         <div className="imgCont">
-                          <img src={featured.attributes.img_url} alt="" />
+                          <img
+                            src={featured.attributes.img_url}
+                            alt={featured.attributes.name}
+                          />
                         </div>
                         <h3>{featured.attributes.name}</h3>
                         <div className="stars">

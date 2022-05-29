@@ -18,7 +18,10 @@ const Hotels = () => {
                   <Link to={`/hotels/${hotel.id}`} key={hotel.id}>
                     <div key={idx} className="card">
                       <div className="imgCont">
-                        <img src={hotel.attributes.img_url} alt="" />
+                        <img
+                          src={hotel.attributes.img_url}
+                          alt={hotel.attributes.name}
+                        />
                       </div>
                       <div className="textCont">
                         <h3>{hotel.attributes.name}</h3>
