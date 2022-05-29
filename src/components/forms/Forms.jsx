@@ -97,7 +97,11 @@ export const LoginForm = () => {
         password: FormData.password,
       });
 
-      setAuth(responseData.data.jwt);
+      const fixJwt = responseData.data.jwt;
+
+      const jwtMoreFixed = fixJwt.replace('"', "");
+      const jwtEvenMoreFixed = jwtMoreFixed.replace('"', "");
+      setAuth(jwtEvenMoreFixed);
       console.log(auth);
       navigate("/admin");
     } catch (error) {
@@ -246,6 +250,14 @@ export const BookingForm = (data, closed) => {
 
 export const HotelForm = () => {
   const [success, setSuccess] = useState(false);
+  const [auth, setAuth] = useContext(AuthContext);
+
+  const jwt = window.localStorage.getItem("jwt");
+  // console.log(jwt);
+
+  // console.log(jwt.replace('"', ""));
+  // console.log(`Bearer ${jwt}"`);
+  console.log(`"Bearer ${jwt.replace('"', "")}`);
 
   const {
     register,
@@ -256,24 +268,32 @@ export const HotelForm = () => {
     resolver: yupResolver(hotelSchema),
   });
 
-  const checkSuccess = (FormData) => {
+  const checkSuccess = async (FormData) => {
     setSuccess(true);
     reset();
 
-    let data = axios.post(HOTELS, {
-      data: {
-        name: FormData.name,
-        description: FormData.description,
-        img_url: FormData.image1,
-        img_url2: FormData.image2,
-        img_url3: FormData.image3,
-        img_url4: FormData.image4,
-        star: FormData.star,
-        rating: FormData.rating,
-        rating_users: FormData.userRating,
-        featured: FormData.featured,
+    let data = await axios.post(
+      HOTELS,
+      {
+        data: {
+          name: FormData.name,
+          description: FormData.description,
+          img_url: FormData.image1,
+          img_url2: FormData.image2,
+          img_url3: FormData.image3,
+          img_url4: FormData.image4,
+          star: FormData.star,
+          rating: FormData.rating,
+          rating_users: FormData.userRating,
+          featured: FormData.featured,
+        },
       },
-    });
+      {
+        headers: {
+          Authorization: `Bearer ${auth}`,
+        },
+      }
+    );
 
     setTimeout(() => {
       setSuccess(false);

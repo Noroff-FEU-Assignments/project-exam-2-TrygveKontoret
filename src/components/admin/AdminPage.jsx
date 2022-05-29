@@ -10,7 +10,7 @@ import AuthContext from "../../context/AuthContext";
 import { useContext } from "react";
 
 export const MessageAdmin = () => {
-  // const { data, loading, error } = useFetch(MSG_URL);
+  const [auth, setAuth] = useContext(AuthContext);
 
   const [data, setData] = useState([]);
   const fetchData = async () => {
@@ -23,7 +23,11 @@ export const MessageAdmin = () => {
   }, []);
 
   const deleteMessage = (id) => {
-    axios.delete(MSG_URL + "/" + id);
+    axios.delete(MSG_URL + "/" + id, {
+      headers: {
+        Authorization: `Bearer ${auth}`,
+      },
+    });
   };
 
   return (
@@ -70,7 +74,7 @@ export const MessageAdmin = () => {
 };
 
 export const BookingAdmin = () => {
-  // const { data, loading, error } = useFetch(BOOKING_URL);
+  const [auth, setAuth] = useContext(AuthContext);
   const [data, setData] = useState([]);
   const fetchData = async () => {
     const { data } = await axios.get(BOOKING_URL);
@@ -84,7 +88,11 @@ export const BookingAdmin = () => {
   }, []);
 
   const deleteBooking = (id) => {
-    axios.delete(BOOKING_URL + "/" + id);
+    axios.delete(BOOKING_URL + "/" + id, {
+      headers: {
+        Authorization: `Bearer ${auth}`,
+      },
+    });
   };
 
   return (
@@ -135,7 +143,7 @@ export const BookingAdmin = () => {
 };
 
 export const HotelsAdmin = () => {
-  // const { data, loading, error } = useFetch(BOOKING_URL);
+  const [auth, setAuth] = useContext(AuthContext);
   const [data, setData] = useState([]);
   const fetchData = async () => {
     const { data } = await axios.get(HOTELS);
@@ -149,7 +157,11 @@ export const HotelsAdmin = () => {
   }, []);
 
   const deleteHotel = (id) => {
-    axios.delete(HOTELS + "/" + id);
+    axios.delete(HOTELS + "/" + id, {
+      headers: {
+        Authorization: `Bearer ${auth}`,
+      },
+    });
   };
 
   return (
