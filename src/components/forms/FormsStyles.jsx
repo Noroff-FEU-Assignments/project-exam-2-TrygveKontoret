@@ -10,7 +10,6 @@ export const StyledForm = styled.form`
   border-radius: 5px;
   width: 50%;
   margin: 30px auto;
-  /* height: 100%; */
   transition: 0.5s;
 
   .cross {
@@ -92,14 +91,6 @@ export const StyledModal = styled.div`
   z-index: 999999;
   width: 100%;
   height: 100%;
-  /* background-color: black; */
   backdrop-filter: blur(5px);
-  /* overflow: hidden;
-  overflow-x: black; */
   transition: 0.5s;
-
-  /* .StyledForm {
-    width: 80%;
-    height: 80%;
-  } */
 `;

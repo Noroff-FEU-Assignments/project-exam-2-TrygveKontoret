@@ -1,11 +1,10 @@
 import { useFetch } from "../../hooks/useFetch";
 import { ACTIVITIES } from "../../utils/api";
-// import { StyledWrapper } from "../featured/FeaturedStyling";
 import { StyledWrapper } from "./ActivitiesStyles";
 import { Link } from "react-router-dom";
 
 const Activities = () => {
-  const { data, loading, hasError } = useFetch(ACTIVITIES);
+  const { data } = useFetch(ACTIVITIES);
 
   return (
     <>
@@ -20,13 +19,6 @@ const Activities = () => {
                       <div className="imgCont">
                         <img src={activity.attributes.img_url} alt="" />
                       </div>
-                      {/* {activity.attributes.name.length > 23 ? (
-                      <h3>
-                        {activity.attributes.name.substring(0, 23) + "..."}
-                      </h3>
-                    ) : (
-                      <h3>{activity.attributes.name}</h3>
-                    )} */}
                       <h3>{activity.attributes.name}</h3>
                       <p>
                         {activity.attributes.description.substring(0, 150) +

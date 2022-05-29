@@ -14,7 +14,6 @@ export const StyledCarousel = styled(Carousel)`
   .control-dots {
     .dot {
       background-color: white;
-      /* border: 2px solid black; */
       width: 15px;
       height: 15px;
     }
@@ -101,12 +100,7 @@ export const StyledCarousel = styled(Carousel)`
 `;
 
 export const StyledDetailCarousel = styled(Carousel)`
-  /* max-width: 40vw; */
-  /* margin: auto; */
-  /* margin: 30px; */
   margin: 30px 0;
-  /* border: 2px solid pink; */
-  /* border-radius: 5px; */
   .imgCont {
     max-width: 100%;
     height: 400px;
@@ -135,15 +129,12 @@ export const StyledRoomCarousel = styled(Carousel)`
 
 export const StyledWelcome = styled.div`
   position: absolute;
-  z-index: 9999999999;
+  z-index: 99;
   top: 30%;
   width: 100%;
 
-  /* background-color: white; */
-
   div {
     background-color: #ffffffc0;
-    /* box-shadow: 0 0 20px 0px white; */
 
     margin: 0 auto;
     width: 50%;
@@ -151,8 +142,6 @@ export const StyledWelcome = styled.div`
     border-radius: 10px;
     h1 {
       text-align: center;
-      /* backdrop-filter: blur(5px); */
-
       margin: 0 auto;
     }
   }

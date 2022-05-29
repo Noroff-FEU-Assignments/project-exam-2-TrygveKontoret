@@ -5,7 +5,7 @@ import { StyledMain } from "./HotelsStyles";
 import { Link } from "react-router-dom";
 
 const Hotels = () => {
-  const { data, loading, hasError } = useFetch(HOTELS);
+  const { data } = useFetch(HOTELS);
 
   return (
     <>
@@ -30,26 +30,6 @@ const Hotels = () => {
                             {hotel.attributes.description.substring(0, 100) +
                               "..."}
                           </p>
-                          {/* {clientWidth === "400px" ? (
-                            <p>
-                              {hotel.attributes.description.substring(0, 100) +
-                                "..."}
-                            </p>
-                          ) : (
-                            <p>
-                              {hotel.attributes.description.substring(0, 150) +
-                                "..."}
-                            </p>
-                          )} */}
-                          {/* {!auth ? (
-                            <Link to="/login">
-                              <li>Login</li>
-                            </Link>
-                          ) : (
-                            <Link to="/admin">
-                              <li>Admin</li>
-                            </Link>
-                          )} */}
                         </div>
                         <div className="rating">
                           <p>User rating: {hotel.attributes.rating} </p>

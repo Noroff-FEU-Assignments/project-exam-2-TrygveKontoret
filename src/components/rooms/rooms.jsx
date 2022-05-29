@@ -4,8 +4,7 @@ import { RoomCarousel } from "../carousel/Carousel";
 import { StyledRoom } from "./RoomsStyles";
 
 export const Rooms = () => {
-  const { data, loading, hasError } = useFetch(ROOM_URL);
-  console.log(data);
+  const { data } = useFetch(ROOM_URL);
 
   return (
     <>

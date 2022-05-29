@@ -15,12 +15,9 @@ export const StyledWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
-    /* margin-top: 30px; */
-    /* margin: 20px; */
 
     .card {
       padding: 10px;
-      /* margin-bottom: 30px; */
       transition: 0.5s;
       box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
         rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
@@ -34,13 +31,7 @@ export const StyledWrapper = styled.div`
           rgba(17, 17, 26, 0.05) 0px 8px 32px;
       }
 
-      /* p {
-        padding-top: 10px;
-      } */
-
       h3 {
-        /* text-align: center; */
-        /* padding-bottom: 10px; */
         padding-top: 10px;
       }
 
@@ -60,7 +51,6 @@ export const StyledWrapper = styled.div`
 
       .rating {
         display: flex;
-        /* margin-top: 10px; */
         p {
           margin-right: 5px;
         }

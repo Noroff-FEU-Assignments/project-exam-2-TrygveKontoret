@@ -1,7 +1,6 @@
 import React from "react";
 import { StyledAdmin, StyledMessage, StyledUnauthorized } from "./AdminStyles";
 import { Link, useNavigate } from "react-router-dom";
-import { useFetch } from "../../hooks/useFetch";
 import { BOOKING_URL, HOTELS, MSG_URL } from "../../utils/api";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -81,8 +80,6 @@ export const BookingAdmin = () => {
     setData(data.data);
   };
 
-  // console.log(data.data);
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -149,8 +146,6 @@ export const HotelsAdmin = () => {
     const { data } = await axios.get(HOTELS);
     setData(data.data);
   };
-
-  // console.log(data.data);
 
   useEffect(() => {
     fetchData();

@@ -2,15 +2,12 @@ import React from "react";
 import { StyledSearch, StyledInput } from "./SearchStyles";
 import { useFetch } from "../../hooks/useFetch";
 import { HOTELS } from "../../utils/api";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Search = () => {
-  const { data, loading, error } = useFetch(HOTELS);
+  const { data } = useFetch(HOTELS);
   const [searchWord, setSearchWord] = useState("");
-
-  console.log(data);
-
   return (
     <>
       <StyledInput>

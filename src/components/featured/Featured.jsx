@@ -5,7 +5,7 @@ import { useFetch } from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 
 const Featured = () => {
-  const { data, loading, hasError } = useFetch(HOTELS);
+  const { data } = useFetch(HOTELS);
 
   return (
     <>

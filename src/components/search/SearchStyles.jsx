@@ -20,11 +20,10 @@ export const StyledSearch = styled.div`
   .searchRes {
     display: flex;
     width: 100%;
-    /* height: 50%; */
     justify-content: space-between;
     align-items: center;
     position: relative;
-    /* z-index: 999999; */
+    z-index: 9999;
     background-color: white;
     border: 1px solid black;
 

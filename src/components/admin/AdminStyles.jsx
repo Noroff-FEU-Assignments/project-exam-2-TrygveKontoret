@@ -29,9 +29,6 @@ export const StyledMessage = styled.div`
     margin: 10px auto;
 
     .card {
-      /* display: flex;
-      flex-direction: column;
-      align-items: center; */
       padding: 10px;
       transition: 0.5s;
       border: 1px solid black;
@@ -48,10 +45,6 @@ export const StyledMessage = styled.div`
         font-size: 16px;
         cursor: pointer;
       }
-
-      /* p {
-        max-width: 300px;
-      } */
     }
   }
 `;
@@ -88,14 +81,8 @@ export const StyledAdmin = styled.div`
     border-radius: 5px;
     background-color: red;
     color: white;
-    /* border: 2px solid black; */
     font-size: 18px;
     cursor: pointer;
-
-    /* &:hover {
-      border: 2px solid #293070;
-      transition: 0.5s;
-    } */
   }
 
   @media (max-width: 776px) {

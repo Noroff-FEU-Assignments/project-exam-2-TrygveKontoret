@@ -12,9 +12,7 @@ export const StyledHeader = styled.header`
 
   .logo {
     width: 25%;
-    svg {
-      width: 100%;
-    }
+    padding-left: 30px;
   }
 
   .searchbar {
@@ -27,7 +25,6 @@ export const StyledHeader = styled.header`
     input {
       width: 80%;
       padding: 5px;
-      /* border: none; */
       outline: none;
     }
   }
@@ -92,10 +89,6 @@ export const StyledBurgerNav = styled(motionNav)`
   border-top: 1px solid white;
 
   .searchbar {
-    /* display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center; */
     width: 100%;
     margin-bottom: 20px;
 
@@ -111,7 +104,6 @@ export const StyledBurgerNav = styled(motionNav)`
   ul {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
     align-items: center;
     width: 100%;
 
@@ -126,7 +118,6 @@ export const StyledBurgerNav = styled(motionNav)`
         width: 100%;
         margin: 0px 0;
         color: white;
-        /* padding: 30px; */
       }
     }
   }

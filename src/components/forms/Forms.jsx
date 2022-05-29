@@ -253,11 +253,6 @@ export const HotelForm = () => {
   const [auth, setAuth] = useContext(AuthContext);
 
   const jwt = window.localStorage.getItem("jwt");
-  // console.log(jwt);
-
-  // console.log(jwt.replace('"', ""));
-  // console.log(`Bearer ${jwt}"`);
-  console.log(`"Bearer ${jwt.replace('"', "")}`);
 
   const {
     register,

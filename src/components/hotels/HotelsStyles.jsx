@@ -19,8 +19,6 @@ export const StyledMain = styled.main`
     .card {
       display: flex;
       flex-direction: row;
-      /* align-items: center; */
-      /* border: 2px solid pink; */
       margin: 20px 0;
       width: 100%;
       border-radius: 10px 0px 0px 10px;
@@ -35,7 +33,6 @@ export const StyledMain = styled.main`
       .textCont {
         display: flex;
         flex-direction: column;
-        /* justify-content: space-evenly; */
         margin-left: 20px;
         width: 60%;
 
@@ -95,7 +92,5 @@ export const StyledMain = styled.main`
         }
       }
     }
-
-    /* background-color: black; */
   }
 `;
