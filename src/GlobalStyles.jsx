@@ -21,9 +21,6 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Lato', sans-serif;
         color: #293070;
     }
-    /* p {
-       color: #293070;
-    } */
 
     a {
         color: #293070;

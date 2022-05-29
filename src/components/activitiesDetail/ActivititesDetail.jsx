@@ -18,8 +18,6 @@ export const ActivitiesDetail = () => {
     fetchData();
   }, []);
 
-  console.log(data);
-
   return (
     <>
       {data.data ? (
