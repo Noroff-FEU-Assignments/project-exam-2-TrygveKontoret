@@ -155,10 +155,10 @@ export const StyledWelcome = styled.div`
   }
 
   @media (max-width: 955px) {
-    top: 15%;
+    top: 10%;
   }
 
-  @media (max-width: 610px) {
+  @media (max-width: 630px) {
     top: 15%;
     div {
       width: 70%;
